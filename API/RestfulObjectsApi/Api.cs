@@ -12,8 +12,6 @@ using System;
 using System.Linq;
 
 public class Api{
-
-    
     private HttpClient http;
     private ILogger<Api> logger;
     public Api(HttpClient http,ILogger<Api> logger)
@@ -21,21 +19,27 @@ public class Api{
        this.http = http; 
        this.logger = logger; 
     }
-     public async Task<Resource> LoadHomePage(){
+     public async Task<HomePage> LoadHomePage(){
         var restfulBaseAddress = "http://localhost:8080";
         var restfulApiAddress = $"{restfulBaseAddress}/restful/";
         var homePage = restfulApiAddress;
 
+        var link = new Link{href = restfulApiAddress};
+        return await this.Load<HomePage>(link);
+     }
 
-         http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
+     public async Task<T> Load<T>(Link l) where T:class {
+            http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
         "Basic", Convert.ToBase64String(
             System.Text.ASCIIEncoding.ASCII.GetBytes(
                $"superadmin:pass")));
-         var obj  = await http.GetJsonAsync<HomePage>(restfulApiAddress);
-         logger.LogInformation(obj);
+         this.logger.LogInformation("Loading " + l.href);
+         var obj  = await http.GetJsonAsync<T>(l.href);
+         logger.LogInformation<T>(obj);
          return obj;
      }
 }
+
 
 public class Resource{
     public Link[] links{ get;set;}
@@ -50,13 +54,20 @@ public class Resource{
 }
 
 public class HomePage:Resource{
-    public Link Self => FindByRel("self");
     public Link  User => FindByRel(roRel("user"));
     public Link  Version => FindByRel(roRel("version"));
     public Link  DomainTypes => FindByRel(roRel("domain-types"));
     public Link  DomainServices => FindByRel(roRel("services"));
 }
 
+public class AbstractResourceList<T>:Resource where T:Link{
+    public Link Self => FindByRel("self");
+
+    public T[] value {get;set;}
+}
+
+public class ResourceList:AbstractResourceList<Link>{
+}
 
 public class Link{
      public string rel{get;set;}

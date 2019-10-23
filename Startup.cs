@@ -10,6 +10,7 @@ namespace rob
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<Api,Api>();
+            services.AddSingleton<ApacheIsisApi,ApacheIsisApi>();
             services.AddLogging(builder => builder.AddBrowserConsole().SetMinimumLevel(LogLevel.Trace));
         }
 

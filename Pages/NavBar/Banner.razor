@@ -33,7 +33,7 @@
 </header>
 @code{
     [Inject]
-    protected ILogger<TopBar> logger { get; set; }
+    protected ILogger<Banner> logger { get; set; }
 
     [Inject]
     protected Api Api { get; set; }
@@ -53,10 +53,6 @@
 
         services = await this.IsisApi.Load<ExtendedResourceList>(this.Context.DomainServices);
         this.logger.LogInformation(services);
-        //get home page (maybe get it as a context
-        // load services (HomePage.Services.Load())
-        // pass all services to the one menu bar programmatically
-        //throw new Exception();
     }
 }
 

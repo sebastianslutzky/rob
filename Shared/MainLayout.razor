@@ -1,9 +1,26 @@
-﻿@inherits LayoutComponentBase
+﻿@using Blazor.Extensions.Logging
+@using Microsoft.Extensions.Logging
 
-<rob.Pages.NavBar.TopBar/>
+@inherits LayoutComponentBase
+@inject Api api;
+
+@if(homePage !=null)
+{
+    <rob.Pages.NavBar.Banner Context="homePage"/>
+}
 <div class="main">
     <div class="content px-4">
         @Body
     </div>
 </div>
 <Footer/>
+@code{
+    [Inject]
+    protected ILogger<MainLayout> logger{get;set;}
+
+    protected HomePage homePage;
+    protected override async Task OnInitializedAsync(){
+        this.homePage = await api.LoadHomePage();
+        logger.LogInformation(homePage);
+    }
+}

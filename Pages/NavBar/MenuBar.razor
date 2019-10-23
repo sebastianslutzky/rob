@@ -1,0 +1,42 @@
+
+@using Blazor.Extensions.Logging
+@using Microsoft.Extensions.Logging
+
+            <li class="dropdown link">
+                <a tabindex="-1" class="dropdown-toggle" data-toggle="dropdown">
+                 <span >Action</span>
+                  <span class="caret"></span></a>
+                <ul class="dropdown-menu scrollable-menu multi-level" role="menu">
+                    <div>
+                        @foreach (var accion in Acciones())
+                        {
+                            <li>
+                                <span>@accion.Name</span>
+                            </li>
+                        }
+                        </div>
+                </ul>
+            </li>
+@code{
+    [Inject]
+    protected ILogger<MenuBar> logger{get;set;}
+
+    [Parameter]
+    public ExtendedResourceList Context{get;set;}
+    
+    public IEnumerable<Accion> Acciones(){
+           logger.LogInformation(Context);
+       foreach(var svc in Context.value){
+           logger.LogInformation("-- turning link into accion --");
+           yield return new Accion{Name=svc.title};
+       };
+    } 
+
+    protected override void OnInitialized()
+    {
+    logger.LogInformation("------");
+    }
+
+    }
+
+
