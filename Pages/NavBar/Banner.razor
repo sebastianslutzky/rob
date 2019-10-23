@@ -1,0 +1,62 @@
+@using Blazor.Extensions.Logging
+@using Microsoft.Extensions.Logging
+
+
+<header role="navigation">
+    <div class="container-fluid">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.app-actions">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="."><span class="navbar-brand">{{applicationName}}</span></a>
+            </div>
+            @if(services != null){
+
+            <div class="navbar-collapse app-actions collapse navbar-left">
+                <div class="navbar-collapse app-actions collapse navbar-left">
+                    <MenuBar Context="services" />
+                </div>
+                <!-- <app-menu-bar class="nav navbar-nav"  #primaryMenu></app-menu-bar> -->
+            </div>
+
+            }
+            <div class="navbar-collapse app-actions collapse navbar-right">
+                <!-- <app-menu-bar class="nav navbar-nav"  #secondaryMenu></app-menu-bar>
+                          <app-menu-bar class="nav navbar-nav"  #tertiaryMenu></app-menu-bar> -->
+            </div>
+        </div>
+    </div>
+</header>
+@code{
+    [Inject]
+    protected ILogger<TopBar> logger { get; set; }
+
+    [Inject]
+    protected Api Api { get; set; }
+    [Inject]
+    protected ApacheIsisApi IsisApi { get; set; }
+
+    [Parameter]
+    public HomePage Context { get; set; }
+    private ExtendedResourceList services;
+
+    protected override async Task OnInitializedAsync()
+    {
+        this.logger.LogInformation("Started to render " + GetType().Name);
+        if(Context == null){
+            throw new ArgumentNullException("Context");
+        }
+
+        services = await this.IsisApi.Load<ExtendedResourceList>(this.Context.DomainServices);
+        this.logger.LogInformation(services);
+        //get home page (maybe get it as a context
+        // load services (HomePage.Services.Load())
+        // pass all services to the one menu bar programmatically
+        //throw new Exception();
+    }
+}
+
