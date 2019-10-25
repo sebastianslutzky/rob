@@ -60,13 +60,20 @@ public class HomePage:Resource{
     public Link  DomainServices => FindByRel(roRel("services"));
 }
 
-public class AbstractResourceList<T>:Resource where T:Link{
+public class User:Resource{
+    public string userName{get;set;}
+    public string[] roles{get;set;}
+}
+
+public class AbstractResourceList<T,V>:Resource where T:Link where V:class{
     public Link Self => FindByRel("self");
 
     public T[] value {get;set;}
+
+    public V extensions {get;set;}
 }
 
-public class ResourceList:AbstractResourceList<Link>{
+public class ResourceList:AbstractResourceList<Link,Object>{
 }
 
 public class Link{

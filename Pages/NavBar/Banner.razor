@@ -1,10 +1,9 @@
 @using Blazor.Extensions.Logging
 @using Microsoft.Extensions.Logging
 
-
-<header role="navigation">
+<header class="navbar navbar-default navbar-fixed-top"role="navigation">
+<link href="css/Banner.css" rel="stylesheet"/>
     <div class="container-fluid">
-        <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.app-actions">
                     <span class="sr-only">Toggle navigation</span>
@@ -14,21 +13,16 @@
                 </button>
                 <a href="."><span class="navbar-brand">{{applicationName}}</span></a>
             </div>
-            @if(services != null){
+
 
             <div class="navbar-collapse app-actions collapse navbar-left">
-                <div class="navbar-collapse app-actions collapse navbar-left">
-                    <MenuBar Context="services" />
-                </div>
-                <!-- <app-menu-bar class="nav navbar-nav"  #primaryMenu></app-menu-bar> -->
+                    <MenuBar @ref="primaryMenu" listClass="primary" />
             </div>
 
-            }
             <div class="navbar-collapse app-actions collapse navbar-right">
-                <!-- <app-menu-bar class="nav navbar-nav"  #secondaryMenu></app-menu-bar>
-                          <app-menu-bar class="nav navbar-nav"  #tertiaryMenu></app-menu-bar> -->
+                    <MenuBar @ref="secondaryMenu" />
+                    <MenuBar @ref="tertiaryMenu" />
             </div>
-        </div>
     </div>
 </header>
 @code{
@@ -43,16 +37,67 @@
     [Parameter]
     public HomePage Context { get; set; }
     private ExtendedResourceList services;
+    private User user;
 
-    protected override async Task OnInitializedAsync()
+    private MenuBar primaryMenu;
+    private MenuBar secondaryMenu;
+    private MenuBar tertiaryMenu;
+
+    private IDictionary<string,MenuBar> menus = new Dictionary<string,MenuBar>();
+
+    protected override void OnInitialized(){
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        this.logger.LogInformation("Started to render " + GetType().Name);
-        if(Context == null){
-            throw new ArgumentNullException("Context");
-        }
+        if(firstRender){
+            logger.LogInformation("on initialized");
+            menus.Add("PRIMARY",primaryMenu);
+            menus.Add("SECONDARY",secondaryMenu);
+            menus.Add("TERTIARY",tertiaryMenu);
+            logger.LogInformation(menus);
 
+            if(Context == null){
+                throw new ArgumentNullException("Context");
+            }
+
+            FillUser();
+            await PopulateMenus();
+        }
+    }
+
+    private async Task PopulateMenus(){
         services = await this.IsisApi.Load<ExtendedResourceList>(this.Context.DomainServices);
         this.logger.LogInformation(services);
+
+        foreach(var linkToService in services.value){
+            AddToRightMenuBar(linkToService);
+        }
+    }
+
+    private async Task AddToRightMenuBar(Link linkToService){
+        //load service
+        await Api.Load<ExtendedResourceList>(linkToService).
+            ContinueWith(x =>{
+                logger.LogInformation("--- banner --");
+                logger.LogInformation(x.Result);
+                var menu = menus[x.Result.extensions.menuBar];
+                if(menu == null){
+                    logger.LogInformation("------ no hay menu ------");
+                    throw new ArgumentNullException("menuismissing");
+                }
+                logger.LogInformation("the menu.");
+                menu.AddService(x.Result);
+                logger.LogInformation(menu);
+            }); 
+        //get menubar from hashtable, based on menubar
+        //add
+    }
+
+    private async void FillUser(){
+        user = await Api.Load<User>(this.Context.User); 
+        this.logger.LogInformation("the  user");
+        this.logger.LogInformation(user);
     }
 }
 

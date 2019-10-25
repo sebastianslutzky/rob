@@ -33,5 +33,13 @@ public class ApacheIsisApi{
      public class ExtendedLink:Link{
          public string title{get;set;}
      }
-public class ExtendedResourceList:AbstractResourceList<ExtendedLink>{
+
+public class IsisExtension{
+    public bool isPersistent{get;set;}
+    public bool isService {get;set;}
+    public string menuBar {get;set;}
+    public string oid {get;set;}
+}
+public class ExtendedResourceList:AbstractResourceList<ExtendedLink,IsisExtension>{
+     public string title{get;set;}
 }

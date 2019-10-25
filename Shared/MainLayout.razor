@@ -4,6 +4,7 @@
 @inherits LayoutComponentBase
 @inject Api api;
 
+<div id="container" class="page container-fluid">
 @if(homePage !=null)
 {
     <rob.Pages.NavBar.Banner Context="homePage"/>
@@ -24,3 +25,4 @@
         logger.LogInformation(homePage);
     }
 }
+</div>
