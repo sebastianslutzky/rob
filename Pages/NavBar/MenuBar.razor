@@ -2,19 +2,17 @@
 @using Blazor.Extensions.Logging
 @using Microsoft.Extensions.Logging
       <ul class="nav navbar-nav @listClass">
-            <li class="dropdown">
-                <a tabindex="-1" class="dropdown-toggle" data-toggle="dropdown">
-                 <span >Action</span>
+            <li class="dropdown ExportToWordMenu">
+                <a class="dropdown-toggle" data-toggle="dropdown">
+                 <span>@title</span>
                   <span class="caret"></span></a>
                 <ul class="dropdown-menu scrollable-menu multi-level" role="menu">
-                    <div>
                         @foreach (var accion in services)
                         {
-                            <li>
+                            <li class="esto-es-la-seccion">
                                 <span>@accion.title</span>
                             </li>
                         }
-                        </div>
                 </ul>
             </li>
         </ul>
@@ -25,20 +23,24 @@
     [Parameter]
     public string listClass{get;set;}
 
+    [Parameter]
+    public string title{get;set;}
+
     private IList<ExtendedResourceList> services {get;set;} = new List<ExtendedResourceList>();
     
     public void AddService(ExtendedResourceList link){
-        logger.LogInformation("-- adding service --");
         services.Add(link);
-        logger.LogDebug(services);
+        if(string.IsNullOrEmpty(title)){
+            title = link.title;
+        }
         StateHasChanged();
     }
 
-    protected override void OnInitialized()
-    {
-        logger.LogInformation("------");
-    }
 
+  private bool isLast(int index)
+  {
+    return index == this.services.Count;
+  }
 }
 
 

@@ -21,9 +21,9 @@ public class ApacheIsisApi{
                $"superadmin:pass")));
         http.DefaultRequestHeaders.TryAddWithoutValidation("Accept","application/json;profile=\"urn:org.apache.isis/v1\"");
         // ,"profile='urn:org.apache.isis/v1'"});
-         this.logger.LogInformation("Loading " + l.href);
+        // this.logger.LogInformation("Loading " + l.href);
          var obj  = await http.GetJsonAsync<T>(l.href);
-         logger.LogInformation<T>(obj);
+         //logger.LogInformation<T>(obj);
          return obj;
      }
 

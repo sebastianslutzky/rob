@@ -22,7 +22,6 @@
     protected HomePage homePage;
     protected override async Task OnInitializedAsync(){
         this.homePage = await api.LoadHomePage();
-        logger.LogInformation(homePage);
     }
 }
 </div>

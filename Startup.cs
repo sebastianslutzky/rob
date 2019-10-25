@@ -11,7 +11,8 @@ namespace rob
         {
             services.AddSingleton<Api,Api>();
             services.AddSingleton<ApacheIsisApi,ApacheIsisApi>();
-            services.AddLogging(builder => builder.AddBrowserConsole().SetMinimumLevel(LogLevel.Trace));
+            services.AddSingleton<MissingApi,MissingApi>();
+            services.AddLogging(builder => builder.AddBrowserConsole().SetMinimumLevel(LogLevel.None));
         }
 
         public void Configure(IComponentsApplicationBuilder app)

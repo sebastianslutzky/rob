@@ -33,9 +33,9 @@ public class Api{
         "Basic", Convert.ToBase64String(
             System.Text.ASCIIEncoding.ASCII.GetBytes(
                $"superadmin:pass")));
-         this.logger.LogInformation("Loading " + l.href);
+         //this.logger.LogInformation("Loading " + l.href);
          var obj  = await http.GetJsonAsync<T>(l.href);
-         logger.LogInformation<T>(obj);
+         //logger.LogInformation<T>(obj);
          return obj;
      }
 }
