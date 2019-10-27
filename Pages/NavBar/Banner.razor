@@ -85,10 +85,12 @@
                 if(menu == null){
                     throw new ArgumentNullException("menuismissing");
                 }
-                menu.AddService(x.Result);
+
+                logger.LogInformation(menu);
+                if(x.Result.HasMembers){
+                    menu.AddService(x.Result);
+                }
             }); 
-        //get menubar from hashtable, based on menubar
-        //add
     }
 
     private void FillUser(){

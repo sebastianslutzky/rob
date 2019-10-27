@@ -1,0 +1,32 @@
+@using Blazor.Extensions.Logging
+@using Microsoft.Extensions.Logging
+<li>
+        <a class="menuLink noVeil" >
+            <span class="fa fa-fw fa-list fontAwesomeIcon"></span><span class="menuLinkLabel">@friendlyName</span>
+        </a>
+    </li>
+@code {
+    [Inject]
+    protected ILogger<MenuAction> logger{get;set;}
+    [Inject]
+    protected Api Api { get; set; }
+    [Inject]
+    protected ApacheIsisApi IsisApi { get; set; }
+    [Parameter]
+    public Member Context{get;set;}
+    private string friendlyName;
+
+    private ExtendedResourceList action;
+
+    protected override async Task OnInitializedAsync()
+    {
+        logger.LogInformation(Context);
+           // get action resource
+        action = await this.Api.Load<ExtendedResourceList>(Context.details);
+        var descriptor = await this.Api.Load<DomainType>(action.DescribedBy); 
+        friendlyName = descriptor.extensions.friendlyName;
+    }
+    public void InvokeAction(){
+
+    }
+}

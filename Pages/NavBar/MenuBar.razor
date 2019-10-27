@@ -7,10 +7,13 @@
                  <span>@title</span>
                   <span class="caret"></span></a>
                 <ul class="dropdown-menu scrollable-menu multi-level" role="menu">
-                        @foreach (var accion in services)
+                        @for (var i=0; i < services.Count;i++)
                         {
-                            <li class="esto-es-la-seccion">
-                                <span>@accion.title</span>
+                            var accion = services[i];
+                            <li>
+                                <MenuBarSection 
+                          NoDivision='isLast(i)' 
+                          Context='accion'/>
                             </li>
                         }
                 </ul>
@@ -39,7 +42,7 @@
 
   private bool isLast(int index)
   {
-    return index == this.services.Count;
+    return index == this.services.Count - 1;
   }
 }
 

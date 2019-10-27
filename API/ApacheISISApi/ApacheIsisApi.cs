@@ -40,6 +40,6 @@ public class IsisExtension{
     public string menuBar {get;set;}
     public string oid {get;set;}
 }
-public class ExtendedResourceList:AbstractResourceList<ExtendedLink,IsisExtension>{
+public class ExtendedResourceList:AbstractObjectResourceList<ExtendedLink,IsisExtension>{
      public string title{get;set;}
 }
