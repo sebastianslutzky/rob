@@ -72,9 +72,10 @@
     private async Task PopulateMenus(){
         services = await this.IsisApi.Load<ExtendedResourceList>(this.Context.DomainServices);
 
-        foreach(var linkToService in services.value){
+        foreach(var linkToService in services.value.OrderBy(x=>x.title)){
             AddToRightMenuBar(linkToService);
         }
+
     }
 
     private async Task AddToRightMenuBar(Link linkToService){
@@ -91,6 +92,7 @@
                     menu.AddService(x.Result);
                 }
             }); 
+
     }
 
     private void FillUser(){

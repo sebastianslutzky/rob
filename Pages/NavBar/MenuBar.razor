@@ -9,12 +9,25 @@
                 <ul class="dropdown-menu scrollable-menu multi-level" role="menu">
                         @for (var i=0; i < services.Count;i++)
                         {
-                            var accion = services[i];
-                            <li>
-                                <MenuBarSection 
-                          NoDivision='isLast(i)' 
-                          Context='accion'/>
-                            </li>
+                            var service = services[i];
+                            if(lastKnownCategory != service.title){
+                              if(!string.IsNullOrEmpty(lastKnownCategory)){
+                                logger.LogWarning($"({title})lastcat:{lastKnownCategory}. this one: {service.title} divider: @lastKnownCategory-@service.title");
+                                <li class="divider @lastKnownCategory-@service.title"></li>
+                              }
+                              else{
+                                logger.LogWarning("no categoy known");
+                              }
+
+                              logger.LogWarning($"from {lastKnownCategory} to {service.title}");
+                              lastKnownCategory = service.title;
+                            }
+
+                            foreach(var accion in service.members){
+                              logger.LogWarning($"adding ({service.title}) {accion.Value}");
+                                 <MenuAction Context='accion.Value'/>
+                            }
+
                         }
                 </ul>
             </li>
@@ -22,6 +35,7 @@
 @code{
     [Inject]
     protected ILogger<MenuBar> logger{get;set;}
+    private string lastKnownCategory = null;
 
     [Parameter]
     public string listClass{get;set;}
