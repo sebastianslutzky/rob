@@ -46,13 +46,9 @@
     private IList<ExtendedResourceList> services {get;set;} = new List<ExtendedResourceList>();
     
     public void AddService(ExtendedResourceList link){
-        services.Add(link);
-        if(string.IsNullOrEmpty(title)){
-            title = link.title;
-        }
+        services.Add(link); 
         StateHasChanged();
     }
-
 
   private bool isLast(int index)
   {

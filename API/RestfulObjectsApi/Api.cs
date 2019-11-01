@@ -98,6 +98,18 @@ public class AbstractObjectResourceList<T, V> : AbstractResourceList<T, V> where
     public bool HasMembers =>members?.Count > 0;
 }
 
+public class ActionParameter{
+    public string description{get;set;}
+    public string id{get;set;}
+    public string name{get;set;}
+    public int num{get;set;}
+
+}
+public class ActionDescription:DomainType{
+    public string id{get;set;}
+    public Link[] parameters {get;set;}
+}
+
 
 public class ResourceList : AbstractResourceList<Link, Object>
 {

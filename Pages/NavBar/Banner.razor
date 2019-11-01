@@ -49,7 +49,7 @@
     private IDictionary<string,MenuBar> menus = new Dictionary<string,MenuBar>();
 
     protected override void OnInitialized(){
-        applicationName = MissingApi.GetApplicationName();
+        applicationName = MissingApi.HomePage_ApplicationName();
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -63,8 +63,12 @@
             if(Context == null){
                 throw new ArgumentNullException("Context");
             }
+            
 
             FillUser();
+            primaryMenu.title = MissingApi.HomePage_Layout_PrimaryMenuTitle();
+            secondaryMenu.title = MissingApi.HomePage_Layout_SecondaryMenuTitle();
+
             await PopulateMenus();
         }
     }

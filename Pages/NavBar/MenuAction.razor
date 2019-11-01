@@ -1,7 +1,7 @@
 @using Blazor.Extensions.Logging
 @using Microsoft.Extensions.Logging
 <li>
-        <a class="menuLink noVeil" >
+        <a class="menuLink noVeil" @onclick="onclickevent">
             <span class="fa fa-fw fa-list fontAwesomeIcon"></span><span class="menuLinkLabel">@friendlyName</span>
         </a>
     </li>
@@ -15,16 +15,26 @@
     [Parameter]
     public Member Context{get;set;}
     private string friendlyName;
+    private ActionDescription descriptor;
 
     private ExtendedResourceList action;
+
+    public void onclickevent(){
+        logger.LogInformation("----- on click ----");
+        logger.LogInformation(Context.details);
+    }
+
 
     protected override async Task OnInitializedAsync()
     {
         logger.LogInformation(Context);
            // get action resource
         action = await this.Api.Load<ExtendedResourceList>(Context.details);
-        var descriptor = await this.Api.Load<DomainType>(action.DescribedBy); 
+        //infer ActionDescription from DescrubedBy
+        descriptor = await this.Api.Load<ActionDescription>(action.DescribedBy); 
         friendlyName = descriptor.extensions.friendlyName;
+        logger.LogInformation("descriptor");
+        logger.LogInformation(descriptor);
     }
     public void InvokeAction(){
 
