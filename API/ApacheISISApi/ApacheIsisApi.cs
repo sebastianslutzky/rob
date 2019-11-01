@@ -26,9 +26,6 @@ public class ApacheIsisApi{
          //logger.LogInformation<T>(obj);
          return obj;
      }
-
-
-
 }
      public class ExtendedLink:Link{
          public string title{get;set;}

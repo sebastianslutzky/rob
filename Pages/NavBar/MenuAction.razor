@@ -12,6 +12,9 @@
     protected Api Api { get; set; }
     [Inject]
     protected ApacheIsisApi IsisApi { get; set; }
+    [Inject]
+    protected ActionInvocationService Invoker { get; set; }
+
     [Parameter]
     public Member Context{get;set;}
     private string friendlyName;
@@ -37,6 +40,6 @@
         logger.LogInformation(descriptor);
     }
     public void InvokeAction(){
-
+        Invoker.InvokeAction(Context);
     }
 }

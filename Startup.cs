@@ -12,6 +12,7 @@ namespace rob
             services.AddSingleton<Api,Api>();
             services.AddSingleton<ApacheIsisApi,ApacheIsisApi>();
             services.AddSingleton<MissingApi,MissingApi>();
+            services.AddSingleton<ActionInvocationService,ActionInvocationService>();
             services.AddLogging(builder => builder.AddBrowserConsole().SetMinimumLevel(LogLevel.None));
         }
 
