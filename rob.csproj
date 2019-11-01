@@ -15,7 +15,19 @@
     <PackageReference Include="Microsoft.AspNetCore.Blazor.DevServer" Version="3.0.0-preview9.19465.2" PrivateAssets="all" />
  </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pages\Menus\" />
+    <Folder Include="API\RestfulObjectsApi\Representations\" />
+    <Folder Include="API\RestfulObjectsApi\Representations\Types\" />
+    <Folder Include="API\ApacheISISApi\Representations\" />
+    <Folder Include="API\ApacheISISApi\Representations\Types\" />
+    <Folder Include="API\RestfulObjectsApi\Representations\Abstract\" />
+    <Folder Include="API\RestfulObjectsApi\Representations\Extensions\" />
   </ItemGroup>
-
+  <ItemGroup>
+    <Compile Remove="API\ApacheISISApi\Representations\Types\ExtendedLink.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="Pages\NavBar\Banner.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
 </Project>

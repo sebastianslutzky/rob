@@ -1,6 +1,8 @@
 
 @using Blazor.Extensions.Logging
 @using Microsoft.Extensions.Logging
+@using types = RestfulObjectApi.Representation.Types
+
       <ul class="nav navbar-nav @listClass">
             <li class="dropdown ExportToWordMenu">
                 <a class="dropdown-toggle" data-toggle="dropdown">
@@ -43,9 +45,9 @@
     [Parameter]
     public string title{get;set;}
 
-    private IList<ExtendedResourceList> services {get;set;} = new List<ExtendedResourceList>();
+    private IList<types.Object> services {get;set;} = new List<types.Object>();
     
-    public void AddService(ExtendedResourceList link){
+    public void AddService(types.Object link){
         services.Add(link); 
         StateHasChanged();
     }

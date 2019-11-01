@@ -1,5 +1,3 @@
-
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
@@ -9,7 +7,7 @@ using Blazor.Extensions.Logging;
 using System.Dynamic;
 using System.Net.Http.Headers;
 using System;
-using System.Linq;
+using RestfulObjectApi.Representation.Types;
 
 public class Api
 {
@@ -41,91 +39,4 @@ public class Api
         //logger.LogInformation<T>(obj);
         return obj;
     }
-}
-
-
-public class Member : Resource
-{
-    public string id { get; set; }
-    public string memberType { get; set; }
-    public Link details => FindByRel(roRel("details"));
-}
-
-public class Resource
-{
-    public Link[] links { get; set; }
-
-    protected Link FindByRel(string rel)
-    {
-        return links.Single(x => x.rel.Contains(rel));
-    }
-
-    protected string roRel(string rel)
-    {
-        return $"urn:org.restfulobjects:rels/{rel}";
-    }
-}
-
-
-
-public class HomePage : Resource
-{
-    public Link User => FindByRel(roRel("user"));
-    public Link Version => FindByRel(roRel("version"));
-    public Link DomainTypes => FindByRel(roRel("domain-types"));
-    public Link DomainServices => FindByRel(roRel("services"));
-}
-
-public class User : Resource
-{
-    public string userName { get; set; }
-    public string[] roles { get; set; }
-}
-
-public class AbstractResourceList<T, V> : Resource where T : Link where V : class
-{
-    public Link Self => FindByRel("self");
-
-    public T[] value { get; set; }
-
-    public V extensions { get; set; }
-}
-public class AbstractObjectResourceList<T, V> : AbstractResourceList<T, V> where T : Link where V : class
-{
-    public Dictionary<string, Member> members { get; set; }
-
-    public Link DescribedBy => FindByRel("describedby");
-    public bool HasMembers =>members?.Count > 0;
-}
-
-public class ActionParameter{
-    public string description{get;set;}
-    public string id{get;set;}
-    public string name{get;set;}
-    public int num{get;set;}
-
-}
-public class ActionDescription:DomainType{
-    public string id{get;set;}
-    public Link[] parameters {get;set;}
-}
-
-
-public class ResourceList : AbstractResourceList<Link, Object>
-{
-}
-
-public class DomainTypeExtension{
-    public string friendlyName{get;set;}
-}
-public class DomainType : AbstractResourceList<Link, DomainTypeExtension>
-{
-}
-
-public class Link
-{
-    public string rel { get; set; }
-    public string href { get; set; }
-    public string method { get; set; }
-    public string type { get; set; }
 }

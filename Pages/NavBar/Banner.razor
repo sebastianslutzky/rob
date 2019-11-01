@@ -1,5 +1,7 @@
 @using Blazor.Extensions.Logging
 @using Microsoft.Extensions.Logging
+@using types = RestfulObjectApi.Representation.Types
+
 
 <header class="navbar navbar-default navbar-fixed-top"role="navigation">
 <link href="css/Banner.css" rel="stylesheet"/>
@@ -37,9 +39,8 @@
     protected MissingApi MissingApi { get; set; }
 
     [Parameter]
-    public HomePage Context { get; set; }
-    private ExtendedResourceList services;
-    private User user;
+    public types.HomePage Context { get; set; }
+    private types.List services;
     private string applicationName;
 
     private MenuBar primaryMenu;
@@ -51,6 +52,8 @@
     protected override void OnInitialized(){
         applicationName = MissingApi.HomePage_ApplicationName();
     }
+
+    
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -74,7 +77,7 @@
     }
 
     private async Task PopulateMenus(){
-        services = await this.IsisApi.Load<ExtendedResourceList>(this.Context.DomainServices);
+        services = await this.Api.Load<types.List>(this.Context.DomainServices);
 
         foreach(var linkToService in services.value.OrderBy(x=>x.title)){
             AddToRightMenuBar(linkToService);
@@ -84,8 +87,9 @@
 
     private async Task AddToRightMenuBar(Link linkToService){
         //load service
-        await Api.Load<ExtendedResourceList>(linkToService).
-            ContinueWith(x =>{
+        await Api.Load<types.Object>(linkToService).
+            ContinueWith(x => {
+                var t = x.Result;
                 var menu = menus[x.Result.extensions.menuBar];
                 if(menu == null){
                     throw new ArgumentNullException("menuismissing");
@@ -100,7 +104,7 @@
     }
 
     private void FillUser(){
-        Api.Load<User>(this.Context.User).ContinueWith(
+        Api.Load<types.User>(this.Context.User).ContinueWith(
             x => tertiaryMenu.title =  x.Result.userName); 
     }
 }
