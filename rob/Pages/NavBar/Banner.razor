@@ -40,7 +40,7 @@
 
     [Parameter]
     public types.HomePage Context { get; set; }
-    private types.List services;
+    private rob.Representation.Types.List services;
     private string applicationName;
 
     private MenuBar primaryMenu;
@@ -77,7 +77,7 @@
     }
 
     private async Task PopulateMenus(){
-        services = await this.Api.Load<types.List>(this.Context.DomainServices);
+        services = await this.Api.Load<rob.Representation.Types.List>(this.Context.DomainServices);
 
         foreach(var linkToService in services.value.OrderBy(x=>x.title)){
             AddToRightMenuBar(linkToService);

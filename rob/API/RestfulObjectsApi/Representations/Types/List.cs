@@ -1,4 +1,4 @@
-﻿namespace RestfulObjectApi.Representation.Types
+﻿namespace rob.Representation.Types
 {
     public class List : AbstractObjectResourceList<Link, DomainTypeExtension>
     {

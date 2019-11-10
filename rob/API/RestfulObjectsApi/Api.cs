@@ -17,6 +17,11 @@ public class Api
     {
         this.http = http;
         this.logger = logger;
+
+        http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
+    "Basic", Convert.ToBase64String(
+        System.Text.ASCIIEncoding.ASCII.GetBytes(
+           $"superadmin:pass")));
     }
     public async Task<HomePage> LoadHomePage()
     {
@@ -28,15 +33,17 @@ public class Api
         return await this.Load<HomePage>(link);
     }
 
+    internal async void Request(Request request)
+    {
+        HttpMethod method = new HttpMethod(request.Target.method);
+        HttpRequestMessage msg = new HttpRequestMessage(method,request.Target.href);
+        var response =  await http.SendAsync(msg);
+        logger.LogInformation("response received");
+        logger.LogInformation(response);
+    }
+
     public async Task<T> Load<T>(Link l) where T : class
     {
-        http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
-    "Basic", Convert.ToBase64String(
-        System.Text.ASCIIEncoding.ASCII.GetBytes(
-           $"superadmin:pass")));
-        //this.logger.LogInformation("Loading " + l.href);
-        var obj = await http.GetJsonAsync<T>(l.href);
-        //logger.LogInformation<T>(obj);
-        return obj;
+        return  await http.GetJsonAsync<T>(l.href);
     }
 }

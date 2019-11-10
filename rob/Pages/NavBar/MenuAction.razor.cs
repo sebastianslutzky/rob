@@ -1,12 +1,12 @@
-@using Blazor.Extensions.Logging
-@using Microsoft.Extensions.Logging
-@using RestfulObjectApi.Representation.Types 
-<li>
-        <a class="menuLink noVeil" @onclick="onclickevent">
-            <span class="fa fa-fw fa-list fontAwesomeIcon"></span><span class="menuLinkLabel">@friendlyName</span>
-        </a>
-    </li>
-@code {
+using System.Threading.Tasks;
+using Blazor.Extensions.Logging;
+using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Logging;
+using RestfulObjectApi.Representation.Types;
+using rob.Representation.Types ;
+namespace rob.Pages.NavBar {
+    public partial class MenuAction{
+
     [Inject]
     protected ILogger<MenuAction> logger{get;set;}
     [Inject]
@@ -23,17 +23,15 @@
 
     private List action;
 
-    public void onclickevent(){
-        logger.LogInformation("----- on click ----");
-        logger.LogInformation(Context.details);
-    }
-
 
     protected override async Task OnInitializedAsync()
     {
         logger.LogInformation(Context);
            // get action resource
         action = await this.Api.Load<List>(Context.details);
+        logger.LogInformation("details");
+        logger.LogInformation(action);
+
         //infer ActionDescription from DescrubedBy
         descriptor = await this.Api.Load<ActionDescription>(action.DescribedBy); 
         friendlyName = descriptor.extensions.friendlyName;
@@ -42,5 +40,6 @@
     }
     public void InvokeAction(){
         Invoker.InvokeAction(Context);
+    }
     }
 }
