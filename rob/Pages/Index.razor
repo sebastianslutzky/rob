@@ -1,7 +1,30 @@
 ﻿@page "/"
+@using Microsoft.Extensions.Logging
+@using RestfulObjectApi.Representation.Types
+@using Blazor.Extensions.Logging;
+@using rob.Pages.ObjectViews;
 
-<h1>Hello, world!</h1>
+@if(FocusObject != null){
+    <IsisList Context="FocusObject"/> 
+}
 
-Welcome to your new app.
+@code{
+    [Inject]
+    protected ActionInvocationService Invoker { get; set; }
+         [Inject]
+    protected ILogger<Index> logger{get;set;}
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+    private IsisObject _focusObject;
+    private IsisObject FocusObject{
+        get { return _focusObject;}
+        set { 
+            _focusObject = value;
+            StateHasChanged();
+            }}
+
+  protected override async Task OnInitializedAsync(){
+      this.Invoker.ActionInvoked += (s,e) => { 
+          this.FocusObject = e.Result;
+      };
+    }
+}

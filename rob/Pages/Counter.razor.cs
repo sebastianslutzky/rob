@@ -3,9 +3,9 @@ namespace rob.Pages{
     {
     int currentCount = 0;
 
-    void IncrementCount()
-    {
-        currentCount++;
-    }
+        void IncrementCount()
+        {
+            currentCount++;
+        }
     }
 }

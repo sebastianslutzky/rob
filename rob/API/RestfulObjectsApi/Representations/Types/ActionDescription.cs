@@ -1,8 +1,12 @@
 ﻿namespace RestfulObjectApi.Representation.Types
 {
-    public class ActionDescription : DomainType
+    public class ActionDescription : Resource
     {
         public string id { get; set; }
-        public Link[] parameters { get; set; }
+        public System.Object parameters { get; set; }
+
+        public Link Self => FindByRel("self");
+
+        public DomainTypeExtension extensions { get; set; }
     }
 }

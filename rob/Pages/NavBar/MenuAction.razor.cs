@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 using RestfulObjectApi.Representation.Types;
 using rob.Representation.Types ;
 namespace rob.Pages.NavBar {
-    public partial class MenuAction{
+    public partial class MenuAction : ComponentBase{
 
     [Inject]
     protected ILogger<MenuAction> logger{get;set;}
@@ -20,26 +20,22 @@ namespace rob.Pages.NavBar {
     public Member Context{get;set;}
     private string friendlyName;
     private ActionDescription descriptor;
-
-    private List action;
+    private ObjectAction action;
 
 
     protected override async Task OnInitializedAsync()
     {
         logger.LogInformation(Context);
-           // get action resource
-        action = await this.Api.Load<List>(Context.details);
-        logger.LogInformation("details");
-        logger.LogInformation(action);
+        action = await this.Api.Load<ObjectAction>(Context.details);
 
-        //infer ActionDescription from DescrubedBy
+
         descriptor = await this.Api.Load<ActionDescription>(action.DescribedBy); 
         friendlyName = descriptor.extensions.friendlyName;
         logger.LogInformation("descriptor");
         logger.LogInformation(descriptor);
     }
-    public void InvokeAction(){
-        Invoker.InvokeAction(Context);
-    }
+        public void InvokeAction(){
+            Invoker.InvokeAction(action,friendlyName);
+        }
     }
 }

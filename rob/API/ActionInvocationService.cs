@@ -2,31 +2,47 @@ using System;
 using Microsoft.Extensions.Logging;
 using Blazor.Extensions.Logging;
 using System.Net.Http;
+using System.Threading.Tasks;
+using RestfulObjectApi.Representation.Types;
 
 /// Takes care of calling an action with the right parameters, verb and headers (api)
 public class ActionInvocationService{
+    public event EventHandler<ActionInvokedEventArgs> ActionInvoked;
     private Api api;
+    private ApacheIsisApi isisApi;
 
     private ILogger<ActionInvocationService> logger;
 
-    public ActionInvocationService(Api api, ILogger<ActionInvocationService> logger)
+    public ActionInvocationService(Api api, ApacheIsisApi isisApi, ILogger<ActionInvocationService> logger)
     {
        this.api = api; 
+       this.isisApi = isisApi; 
        this.logger = logger; 
     }
 
-    public async void InvokeAction(Member action){
-       //todo: construct and pass Request object to API
-       //construct: convert Member to request
-       //  (extract link as target)
-       var response = await api.Load<Object>(action.details);
-       logger.LogInformation("-- here is the invocation details");
-       logger.LogInformation(response);
-       var request = new Request(action);
+    public async Task<IsisObject> InvokeAction(ObjectAction action,string title){
        
-        this.api.Request(request);
-       // If needs parameters, send out an event or use a ParameterCollector service
-       // Once parameters are collected, send ParameterCollection and descriptor to API.
+       return await isisApi.Load(action.invoke,title).ContinueWith(x=> {
+           x.Wait();
+            OnActionInvoked(x);
+            return x.Result;
+       }
+       );
+    }
+
+    private async void OnActionInvoked(Task<IsisObject> task){
+        if(ActionInvoked != null) {
+            ActionInvoked(this,new ActionInvokedEventArgs(task.Result));
+        }
+    }
+
+}
+
+public class ActionInvokedEventArgs{
+    public IsisObject Result{get;private set;}
+    public ActionInvokedEventArgs(IsisObject result)
+    {
+       Result = result; 
     }
 
 }
