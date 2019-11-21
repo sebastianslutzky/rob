@@ -8,5 +8,9 @@ namespace rob.Pages.ObjectViews {
  public partial class IsisList:ComponentBase{
    [Parameter]
     public IsisObject Context{get;set;}
+
+    private string getObjectUrl(JToken resultObject){
+      return "object/" + System.Uri.EscapeDataString((string)resultObject["$$href"]);
+    }
  }
 }

@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Components;
+
 namespace rob.Pages{
     public partial class Counter
     {
@@ -7,5 +9,8 @@ namespace rob.Pages{
         {
             currentCount++;
         }
+         [Parameter]
+    public string Text { get; set; }
+
     }
 }
