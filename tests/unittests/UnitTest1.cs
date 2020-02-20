@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
+using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json.Linq;
 using RestfulObjectApi.Representation.Types;
 using rob;
+using rob.API.ApacheISISApi;
 
 namespace unittests
 {
@@ -65,7 +67,7 @@ namespace unittests
             var svcs = GetServices();
             var contacts = svcs.value.Single(x=> x.title == "Contacts");
 
-            var contactResource = api.Load<RestfulObjectApi.Representation.Types.Object>(contacts);
+            var contactResource = api.Load<RestfulObjectApi.Representation.Types.ObjectContext>(contacts);
             contactResource.Wait();
             Assert.IsNotNull(contactResource.Result);
             Assert.AreEqual("PRIMARY",contactResource.Result.extensions.menuBar);
@@ -73,7 +75,7 @@ namespace unittests
 
         [TestMethod]
         public void LoadActionDescriptor(){
-           RestfulObjectApi.Representation.Types.Object contactsMenu = ContactMenu();
+           RestfulObjectApi.Representation.Types.ObjectContext contactsMenu = ContactMenu();
 
             Task<ExpandoObject> p = api.Load<ExpandoObject>(contactsMenu.members["listAll"].details);
             p.Wait();
@@ -112,6 +114,18 @@ namespace unittests
         }
 
 
+        [TestMethod]
+        public void IsisSingleObject(){
+            var fileName = Directory.GetCurrentDirectory();
+            var raw = System.IO.File.ReadAllText("data/contact.json");
+
+            var obj = JObject.Parse(raw);
+            var isisObj = new IsisSingleObject(obj);
+            var name = isisObj["name"];
+            Assert.AreEqual("Benoît Fouré", name);           
+        }
+
+
         private ObjectAction ListAllContacts() {
             var menu = ContactMenu();
             Task<ObjectAction> p = api.Load<ObjectAction>(
@@ -121,10 +135,10 @@ namespace unittests
         }
         
 
-        private RestfulObjectApi.Representation.Types.Object ContactMenu() {
+        private RestfulObjectApi.Representation.Types.ObjectContext ContactMenu() {
             var svcs = GetServices();
             var contacts = svcs.value.Single(x=> x.title == "Contacts");
-            var contactResource = api.Load<RestfulObjectApi.Representation.Types.Object>(contacts);
+            var contactResource = api.Load<RestfulObjectApi.Representation.Types.ObjectContext>(contacts);
             contactResource.Wait();
             return contactResource.Result;
         }

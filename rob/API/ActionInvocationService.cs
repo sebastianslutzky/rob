@@ -35,7 +35,6 @@ public class ActionInvocationService{
             ActionInvoked(this,new ActionInvokedEventArgs(task.Result));
         }
     }
-
 }
 
 public class ActionInvokedEventArgs{

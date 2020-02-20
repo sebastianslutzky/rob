@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Components.Builder;
 using Blazor.Extensions.Logging;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
+using rob.Services;
 
 namespace rob
 {
@@ -12,6 +13,7 @@ namespace rob
             services.AddSingleton<Api,Api>();
             services.AddSingleton<ApacheIsisApi,ApacheIsisApi>();
             services.AddSingleton<MissingApi,MissingApi>();
+            services.AddSingleton<ObjectLoadedPublisherService,ObjectLoadedPublisherService>();
             services.AddSingleton<ActionInvocationService,ActionInvocationService>();
             services.AddLogging(builder => builder.AddBrowserConsole().SetMinimumLevel(LogLevel.None));
         }

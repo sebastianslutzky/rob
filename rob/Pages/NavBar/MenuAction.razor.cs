@@ -28,7 +28,6 @@ namespace rob.Pages.NavBar {
         logger.LogInformation(Context);
         action = await this.Api.Load<ObjectAction>(Context.details);
 
-
         descriptor = await this.Api.Load<ActionDescription>(action.DescribedBy); 
         friendlyName = descriptor.extensions.friendlyName;
         logger.LogInformation("descriptor");

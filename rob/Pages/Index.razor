@@ -1,30 +1,25 @@
 ﻿@page "/"
+@page "/object/{resource}"
+
 @using Microsoft.Extensions.Logging
 @using RestfulObjectApi.Representation.Types
 @using Blazor.Extensions.Logging;
-@using rob.Pages.ObjectViews;
+@using rob.Pages.ListView;
+@using rob.Services;
+@using rob.Pages.ObjectView;
 
 @if(FocusObject != null){
-    <IsisList Context="FocusObject"/> 
-}
+    if(FocusObjectAsIsisObject != null){
 
-@code{
-    [Inject]
-    protected ActionInvocationService Invoker { get; set; }
-         [Inject]
-    protected ILogger<Index> logger{get;set;}
-
-    private IsisObject _focusObject;
-    private IsisObject FocusObject{
-        get { return _focusObject;}
-        set { 
-            _focusObject = value;
-            StateHasChanged();
-            }}
-
-  protected override async Task OnInitializedAsync(){
-      this.Invoker.ActionInvoked += (s,e) => { 
-          this.FocusObject = e.Result;
-      };
+    <IsisList Context="FocusObjectAsIsisObject"/> 
+    }
+    else
+    {
+     <ObjectView Context="FocusObjectAsIsisSingleObject" />
     }
 }
+else{
+ <p> no hay nada</p>
+}
+
+    

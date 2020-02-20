@@ -17,5 +17,10 @@
   <ItemGroup>
     <ProjectReference Include="..\..\rob\rob.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="data\*.*">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>  
+  </ItemGroup>
 
 </Project>

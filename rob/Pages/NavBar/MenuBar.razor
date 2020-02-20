@@ -45,9 +45,9 @@
     [Parameter]
     public string title{get;set;}
 
-    private IList<types.Object> services {get;set;} = new List<types.Object>();
+    private IList<types.ObjectContext> services {get;set;} = new List<types.ObjectContext>();
     
-    public void AddService(types.Object link){
+    public void AddService(types.ObjectContext link){
         services.Add(link); 
         StateHasChanged();
     }

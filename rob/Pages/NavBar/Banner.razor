@@ -87,7 +87,7 @@
 
     private async Task AddToRightMenuBar(Link linkToService){
         //load service
-        await Api.Load<types.Object>(linkToService).
+        await Api.Load<types.ObjectContext>(linkToService).
             ContinueWith(x => {
                 var t = x.Result;
                 var menu = menus[x.Result.extensions.menuBar];
