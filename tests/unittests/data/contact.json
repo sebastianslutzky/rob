@@ -1,0 +1,341 @@
+{
+    "$$href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14",
+    "$$title": "Benoît Fouré",
+    "$$instanceId": "14",
+    "datanucleusIdLong": 14,
+    "datanucleusVersionTimestamp": 1581329143404,
+    "company": "Cumba",
+    "email": "benoit.foure.80@gmail.com",
+    "name": "Benoît Fouré",
+    "notes": null,
+    "contactNumbers": [
+        {
+            "$$href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.number.dom.ContactNumber/21",
+            "$$title": "+33 3 22 99 11 77 (Office)",
+            "$$instanceId": "21",
+            "datanucleusIdLong": 21,
+            "datanucleusVersionTimestamp": 1581329143398,
+            "number": "+33 3 22 99 11 77",
+            "owner": {
+                "rel": "urn:org.restfulobjects:rels/value",
+                "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14",
+                "method": "GET",
+                "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object\"",
+                "title": "Benoît Fouré"
+            },
+            "type": "Office"
+        },
+        {
+            "$$href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.number.dom.ContactNumber/22",
+            "$$title": "+33 6 90 90 90 90 (Mobile)",
+            "$$instanceId": "22",
+            "datanucleusIdLong": 22,
+            "datanucleusVersionTimestamp": 1581329143401,
+            "number": "+33 6 90 90 90 90",
+            "owner": {
+                "rel": "urn:org.restfulobjects:rels/value",
+                "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14",
+                "method": "GET",
+                "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object\"",
+                "title": "Benoît Fouré"
+            },
+            "type": "Mobile"
+        }
+    ],
+    "contactRoles": [
+        {
+            "$$href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.role.dom.ContactRole/10",
+            "$$title": "Benoît Fouré: Technical Manager in Amiens Property",
+            "$$instanceId": "10",
+            "datanucleusIdLong": 10,
+            "datanucleusVersionTimestamp": 1581329143403,
+            "contact": {
+                "rel": "urn:org.restfulobjects:rels/value",
+                "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14",
+                "method": "GET",
+                "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object\"",
+                "title": "Benoît Fouré"
+            },
+            "contactGroup": {
+                "rel": "urn:org.restfulobjects:rels/value",
+                "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.group.dom.ContactGroup/11",
+                "method": "GET",
+                "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object\"",
+                "title": "Amiens Property (France)"
+            },
+            "roleName": "Technical Manager"
+        }
+    ],
+    "$$ro": {
+        "links": [
+            {
+                "rel": "self",
+                "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14",
+                "method": "GET",
+                "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object\"",
+                "title": "Benoît Fouré"
+            },
+            {
+                "rel": "describedby",
+                "href": "http://localhost:8080/restful/domain-types/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact",
+                "method": "GET",
+                "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/domain-type\""
+            },
+            {
+                "rel": "urn:org.apache.isis.restfulobjects:rels/object-layout",
+                "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14/object-layout",
+                "method": "GET",
+                "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-layout-bs3\""
+            },
+            {
+                "rel": "urn:org.apache.isis.restfulobjects:rels/object-icon",
+                "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14/image",
+                "method": "GET",
+                "type": "image/png"
+            },
+            {
+                "rel": "urn:org.restfulobjects:rels/update",
+                "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14",
+                "method": "PUT",
+                "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object\"",
+                "arguments": {}
+            }
+        ],
+        "extensions": {
+            "oid": "org.incode.eurocommercial.contactapp.module.contacts.dom.Contact:14",
+            "isService": false,
+            "isPersistent": true
+        },
+        "title": "Benoît Fouré",
+        "domainType": "org.incode.eurocommercial.contactapp.module.contacts.dom.Contact",
+        "instanceId": "14",
+        "members": {
+            "company": {
+                "id": "company",
+                "memberType": "property",
+                "links": [
+                    {
+                        "rel": "urn:org.restfulobjects:rels/details;property=\"company\"",
+                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14/properties/company",
+                        "method": "GET",
+                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-property\""
+                    }
+                ],
+                "value": "Cumba",
+                "extensions": {
+                    "x-isis-format": "string"
+                },
+                "disabledReason": "Immutable"
+            },
+            "email": {
+                "id": "email",
+                "memberType": "property",
+                "links": [
+                    {
+                        "rel": "urn:org.restfulobjects:rels/details;property=\"email\"",
+                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14/properties/email",
+                        "method": "GET",
+                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-property\""
+                    }
+                ],
+                "value": "benoit.foure.80@gmail.com",
+                "extensions": {
+                    "x-isis-format": "string"
+                },
+                "disabledReason": "Immutable"
+            },
+            "name": {
+                "id": "name",
+                "memberType": "property",
+                "links": [
+                    {
+                        "rel": "urn:org.restfulobjects:rels/details;property=\"name\"",
+                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14/properties/name",
+                        "method": "GET",
+                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-property\""
+                    }
+                ],
+                "value": "Benoît Fouré",
+                "extensions": {
+                    "x-isis-format": "string"
+                },
+                "disabledReason": "Immutable"
+            },
+            "notes": {
+                "id": "notes",
+                "memberType": "property",
+                "links": [
+                    {
+                        "rel": "urn:org.restfulobjects:rels/details;property=\"notes\"",
+                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14/properties/notes",
+                        "method": "GET",
+                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-property\""
+                    }
+                ],
+                "value": null,
+                "extensions": {
+                    "x-isis-format": "string"
+                },
+                "disabledReason": "Immutable"
+            },
+            "datanucleusIdLong": {
+                "id": "datanucleusIdLong",
+                "memberType": "property",
+                "links": [
+                    {
+                        "rel": "urn:org.restfulobjects:rels/details;property=\"datanucleusIdLong\"",
+                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14/properties/datanucleusIdLong",
+                        "method": "GET",
+                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-property\""
+                    }
+                ],
+                "value": 14,
+                "format": "int",
+                "extensions": {
+                    "x-isis-format": "long"
+                },
+                "disabledReason": "Contributed property"
+            },
+            "datanucleusVersionTimestamp": {
+                "id": "datanucleusVersionTimestamp",
+                "memberType": "property",
+                "links": [
+                    {
+                        "rel": "urn:org.restfulobjects:rels/details;property=\"datanucleusVersionTimestamp\"",
+                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14/properties/datanucleusVersionTimestamp",
+                        "method": "GET",
+                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-property\""
+                    }
+                ],
+                "value": 1581329143404,
+                "format": "utc-millisec",
+                "extensions": {
+                    "x-isis-format": "javasqltimestamp"
+                },
+                "disabledReason": "Contributed property"
+            },
+            "contactNumbers": {
+                "id": "contactNumbers",
+                "memberType": "collection",
+                "links": [
+                    {
+                        "rel": "urn:org.restfulobjects:rels/details;collection=\"contactNumbers\"",
+                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14/collections/contactNumbers",
+                        "method": "GET",
+                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-collection\""
+                    }
+                ],
+                "disabledReason": "Immutable"
+            },
+            "contactRoles": {
+                "id": "contactRoles",
+                "memberType": "collection",
+                "links": [
+                    {
+                        "rel": "urn:org.restfulobjects:rels/details;collection=\"contactRoles\"",
+                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14/collections/contactRoles",
+                        "method": "GET",
+                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-collection\""
+                    }
+                ],
+                "disabledReason": "Immutable"
+            },
+            "create": {
+                "id": "create",
+                "memberType": "action",
+                "links": [
+                    {
+                        "rel": "urn:org.restfulobjects:rels/details;action=\"create\"",
+                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14/actions/create",
+                        "method": "GET",
+                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-action\""
+                    }
+                ]
+            },
+            "delete": {
+                "id": "delete",
+                "memberType": "action",
+                "links": [
+                    {
+                        "rel": "urn:org.restfulobjects:rels/details;action=\"delete\"",
+                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14/actions/delete",
+                        "method": "GET",
+                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-action\""
+                    }
+                ]
+            },
+            "edit": {
+                "id": "edit",
+                "memberType": "action",
+                "links": [
+                    {
+                        "rel": "urn:org.restfulobjects:rels/details;action=\"edit\"",
+                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14/actions/edit",
+                        "method": "GET",
+                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-action\""
+                    }
+                ]
+            },
+            "addContactNumber": {
+                "id": "addContactNumber",
+                "memberType": "action",
+                "links": [
+                    {
+                        "rel": "urn:org.restfulobjects:rels/details;action=\"addContactNumber\"",
+                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14/actions/addContactNumber",
+                        "method": "GET",
+                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-action\""
+                    }
+                ]
+            },
+            "removeContactNumber": {
+                "id": "removeContactNumber",
+                "memberType": "action",
+                "links": [
+                    {
+                        "rel": "urn:org.restfulobjects:rels/details;action=\"removeContactNumber\"",
+                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14/actions/removeContactNumber",
+                        "method": "GET",
+                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-action\""
+                    }
+                ]
+            },
+            "addContactRole": {
+                "id": "addContactRole",
+                "memberType": "action",
+                "links": [
+                    {
+                        "rel": "urn:org.restfulobjects:rels/details;action=\"addContactRole\"",
+                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14/actions/addContactRole",
+                        "method": "GET",
+                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-action\""
+                    }
+                ]
+            },
+            "removeContactRole": {
+                "id": "removeContactRole",
+                "memberType": "action",
+                "links": [
+                    {
+                        "rel": "urn:org.restfulobjects:rels/details;action=\"removeContactRole\"",
+                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14/actions/removeContactRole",
+                        "method": "GET",
+                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-action\""
+                    }
+                ]
+            },
+            "clearHints": {
+                "id": "clearHints",
+                "memberType": "action",
+                "links": [
+                    {
+                        "rel": "urn:org.restfulobjects:rels/details;action=\"clearHints\"",
+                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14/actions/clearHints",
+                        "method": "GET",
+                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-action\""
+                    }
+                ]
+            }
+        }
+    }
+}
