@@ -22,8 +22,8 @@ namespace rob.Pages{
 
         private IDisplayableObject _focusObject;
 
-        protected IsisObject FocusObjectAsIsisObject => FocusObject as IsisObject;
-        protected IsisSingleObject FocusObjectAsIsisSingleObject => FocusObject as IsisSingleObject;
+        private IsisObject FocusObjectAsIsisObject => FocusObject as IsisObject;
+        private IsisSingleObject FocusObjectAsIsisSingleObject => FocusObject as IsisSingleObject;
 
         private IDisplayableObject FocusObject
         {
@@ -36,7 +36,6 @@ namespace rob.Pages{
         public async override Task SetParametersAsync(ParameterView parameters)
         {
             await base.SetParametersAsync(parameters);
-            Logger.LogWarning("1heya heeeeya, aweeee sam sayaaa...");
             if (RoutedToObject())
             {
                 LoadSingleObject(Resource);
@@ -46,11 +45,6 @@ namespace rob.Pages{
    
         protected override async Task OnInitializedAsync()
         {
-            Logger.LogInformation("initializing...");
-            if (this.Resource != null)
-            {
-                Logger.LogInformation("I have  a resource and it is:" + Resource);
-            }
             this.Invoker.ActionInvoked += (s, e) =>
             {
                 this.FocusObject = e.Result;
@@ -65,7 +59,6 @@ namespace rob.Pages{
         private async void LoadSingleObject(string url)
         {
             this.FocusObject  = await this.IsisApi.LoadAsIsisSingleObject(new Link() { href = url, method = "Get" });
-
         }
     } 
 }

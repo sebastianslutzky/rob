@@ -18,17 +18,22 @@ public class ApacheIsisApi{
        this.http = http; 
        this.logger = logger; 
     }
-     public async Task<IsisObject> Load(Link l,string title) {
+     public async Task<IsisObject> Load(ILink l,string title) {
         var token = JArray.Parse(await LoadRaw(l));
         return new IsisObject(token,title);
     }
 
-    public async Task<IsisSingleObject> LoadAsIsisSingleObject(Link l) {
+    public async Task<IsisSingleObject> LoadAsIsisSingleObject(ILink l) {
         var token = JObject.Parse(await LoadRaw(l));
         return new IsisSingleObject(token);
     }
 
-    private async Task<string> LoadRaw(Link l) 
+    public async Task<JObject> LoadAsJObject(ILink l)
+    {
+        return JObject.Parse(await LoadRaw(l));
+    }
+
+    private async Task<string> LoadRaw(ILink l) 
     {
         http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
       "Basic", Convert.ToBase64String(

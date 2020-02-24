@@ -10,16 +10,13 @@
 
 @if(FocusObject != null){
     if(FocusObjectAsIsisObject != null){
-
-    <IsisList Context="FocusObjectAsIsisObject"/> 
+    <IsisList Context="FocusObjectAsIsisObject"/>
     }
     else
     {
-     <ObjectView Context="FocusObjectAsIsisSingleObject" />
+    <CascadingValue Value="FocusObjectAsIsisSingleObject">
+        <ObjectView/>
+    </CascadingValue>
     }
 }
-else{
- <p> no hay nada</p>
-}
 
-    

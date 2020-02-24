@@ -42,7 +42,7 @@ public class Api
         logger.LogInformation(response);
     }
 
-    public async Task<T> Load<T>(Link l) where T : class
+    public async Task<T> Load<T>(ILink l) where T : class
     {
         return  await http.GetJsonAsync<T>(l.href);
     }

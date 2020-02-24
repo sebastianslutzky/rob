@@ -1,6 +1,6 @@
-﻿public abstract class AbstractResourceList<T, V> : Resource where T : Link where V : class
+﻿public abstract class AbstractResourceList<T, V> : Resource<Link> where T : Link where V : class
 {
-    public Link Self => FindByRel("self");
+    public ILink Self => FindByRel("self");
 
     public T[] value { get; set; }
 

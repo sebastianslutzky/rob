@@ -16,7 +16,7 @@ namespace RestfulObjectApi.Representation.Types
     public class ObjectAction : AbstractObjectResourceList<Link, IsisExtension>
     {
         public string title { get; set; }
-        public Link invoke => FindByRel("urn:org.restfulobjects:rels/invoke");
+        public ILink invoke => FindByRel("urn:org.restfulobjects:rels/invoke");
     }
 }
 

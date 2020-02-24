@@ -4,10 +4,9 @@ using rob.API.ApacheISISApi;
 namespace rob.Pages.ObjectView{
     public partial class ObjectView
     {
-        [Parameter]
+        [CascadingParameter]
         public IsisSingleObject Context { get; set; }
-
-
+        
     
     }
 }

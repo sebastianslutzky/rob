@@ -47,7 +47,7 @@ public class ActionInvokedEventArgs{
 }
 
 public class Request{
-   public Link Target{private set; get;}
+   public ILink Target{private set; get;}
 
    private HttpMethod method;
    public Request(Member action)

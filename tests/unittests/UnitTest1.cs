@@ -116,13 +116,50 @@ namespace unittests
 
         [TestMethod]
         public void IsisSingleObject(){
+            var isisObj = LoadIsisObject();
+            var name = isisObj["name"];
+            Assert.AreEqual("Benoît Fouré", name);           
+        }
+
+        [TestMethod]
+        public void SingleObjectTitle()
+        {
+            var isisObj = LoadIsisObject();
+            var name = isisObj.Title;
+            Assert.AreEqual("Benoît Fouré", name);
+        }
+
+        private IsisSingleObject LoadIsisObject()
+        {
             var fileName = Directory.GetCurrentDirectory();
             var raw = System.IO.File.ReadAllText("data/contact.json");
 
             var obj = JObject.Parse(raw);
             var isisObj = new IsisSingleObject(obj);
-            var name = isisObj["name"];
-            Assert.AreEqual("Benoît Fouré", name);           
+            return isisObj;
+        }
+
+        [TestMethod]
+        public void SingleObjectRO() {
+
+            var isisObj = LoadIsisObject();
+            Assert.AreEqual(5, isisObj.Links.Length);
+        }
+
+        [TestMethod]
+        public void SingleObjectLayoutLink (){
+            var isisObj = LoadIsisObject();
+            var layoutLink = isisObj.Layout;
+
+            Assert.IsNotNull(layoutLink);
+        }
+
+        //integ test! (loads layout)
+        [TestMethod]
+        public void SingleObjectLoadLayout() {
+            var layoutLink = LoadIsisObject().Layout;
+            var layout =  api.Load<Object>(layoutLink);
+            Assert.IsNotNull(layout);
         }
 
 

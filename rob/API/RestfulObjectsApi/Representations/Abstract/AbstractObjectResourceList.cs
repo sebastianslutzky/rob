@@ -5,6 +5,6 @@ public abstract class AbstractObjectResourceList<T, V> : AbstractResourceList<T,
 {
     public Dictionary<string, Member> members { get; set; }
 
-    public Link DescribedBy => FindByRel("describedby");
+    public ILink DescribedBy => FindByRel("describedby");
     public bool HasMembers => members?.Count > 0;
 }

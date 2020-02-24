@@ -1,10 +1,10 @@
 ﻿namespace RestfulObjectApi.Representation.Types
 {
-    public class HomePage : Resource
+    public class HomePage : Resource<Link>
     {
-        public Link User => FindByRel(roRel("user"));
-        public Link Version => FindByRel(roRel("version"));
-        public Link DomainTypes => FindByRel(roRel("domain-types"));
-        public Link DomainServices => FindByRel(roRel("services"));
+        public ILink User => FindByRel(roRel("user"));
+        public ILink Version => FindByRel(roRel("version"));
+        public ILink DomainTypes => FindByRel(roRel("domain-types"));
+        public ILink DomainServices => FindByRel(roRel("services"));
     }
 }

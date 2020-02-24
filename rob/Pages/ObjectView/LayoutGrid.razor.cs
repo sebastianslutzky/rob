@@ -2,9 +2,9 @@
 using rob.API.ApacheISISApi;
 
 namespace rob.Pages.ObjectView{
-    public partial class ObjectView
+    public partial class LayoutGrid
     {
-        [Parameter]
+        [CascadingParameter]
         public IsisSingleObject Context { get; set; }
 
 
