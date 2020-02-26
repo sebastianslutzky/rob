@@ -5,8 +5,11 @@ using Microsoft.Extensions.Logging;
 using Blazor.Extensions.Logging;
 using rob.Services;
 using rob.API.ApacheISISApi;
+using rob.API.ApacheISISApi.Representations;
+using rob.API.ApacheISISApi.Representations.layout;
 
 namespace rob.Pages{
+
     public partial class Index: ComponentBase{
     [Inject]
     protected ActionInvocationService Invoker { get; set; }
@@ -16,6 +19,9 @@ namespace rob.Pages{
     protected ILogger<Index> Logger{get;set;}
         [Inject]
         protected ApacheIsisApi IsisApi { get; set; }
+
+        [Inject]
+        protected Api RestFulObjectsApi { get; set; }
 
         [Parameter]
         public string Resource { get; set; }
@@ -32,6 +38,8 @@ namespace rob.Pages{
             _focusObject = value;
             StateHasChanged();
             }}
+
+        private ObjectLayout ObjectLayout { get; set; }
 
         public async override Task SetParametersAsync(ParameterView parameters)
         {
@@ -58,7 +66,10 @@ namespace rob.Pages{
 
         private async void LoadSingleObject(string url)
         {
-            this.FocusObject  = await this.IsisApi.LoadAsIsisSingleObject(new Link() { href = url, method = "Get" });
+            var isisObject = await this.IsisApi.LoadAsIsisSingleObject(new Link() { href = url, method = "Get" });
+            this.FocusObject = isisObject;
+            this.ObjectLayout = await this.RestFulObjectsApi.Load<ObjectLayout>(isisObject.Layout);
+            StateHasChanged();
         }
     } 
 }

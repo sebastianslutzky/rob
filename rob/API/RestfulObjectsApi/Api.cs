@@ -38,8 +38,6 @@ public class Api
         HttpMethod method = new HttpMethod(request.Target.method);
         HttpRequestMessage msg = new HttpRequestMessage(method,request.Target.href);
         var response =  await http.SendAsync(msg);
-        logger.LogInformation("response received");
-        logger.LogInformation(response);
     }
 
     public async Task<T> Load<T>(ILink l) where T : class

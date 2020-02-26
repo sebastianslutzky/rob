@@ -21,6 +21,7 @@
     <Folder Include="API\ApacheISISApi\Representations\Types\" />
     <Folder Include="API\RestfulObjectsApi\Representations\Abstract\" />
     <Folder Include="API\RestfulObjectsApi\Representations\Extensions\" />
+    <Folder Include="API\ApacheISISApi\Representations\layout\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="API\ApacheISISApi\Representations\Types\ExtendedLink.cs" />

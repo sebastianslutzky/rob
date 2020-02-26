@@ -1,0 +1,705 @@
+﻿{
+  "row": [
+    {
+      "cols": [
+        {
+          "col": {
+            "domainObject": {
+              "named": null,
+              "describedAs": null,
+              "plural": null,
+              "metadataError": null,
+              "link": {
+                "rel": "urn:org.restfulobjects:rels/element",
+                "method": "GET",
+                "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/5",
+                "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object\""
+              },
+              "bookmarking": null,
+              "cssClass": null,
+              "cssClassFa": null,
+              "cssClassFaPosition": null,
+              "namedEscaped": null
+            },
+            "action": [
+              {
+                "named": null,
+                "describedAs": null,
+                "metadataError": null,
+                "link": {
+                  "rel": "urn:org.restfulobjects:rels/action",
+                  "method": "GET",
+                  "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/5/actions/recentActivity",
+                  "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-action\""
+                },
+                "id": "recentActivity",
+                "bookmarking": null,
+                "cssClass": null,
+                "cssClassFa": null,
+                "cssClassFaPosition": null,
+                "hidden": null,
+                "namedEscaped": null,
+                "position": null,
+                "promptStyle": null
+              }
+            ],
+            "metadataError": null,
+            "cssClass": null,
+            "size": null,
+            "id": null,
+            "span": 12,
+            "unreferencedActions": true,
+            "unreferencedCollections": null
+          }
+        }
+      ],
+      "metadataError": null,
+      "cssClass": null,
+      "id": null
+    },
+    {
+      "cols": [
+        {
+          "col": {
+            "domainObject": null,
+            "tabGroup": [
+              {
+                "tab": [
+                  {
+                    "name": "Contact Details",
+                    "row": [
+                      {
+                        "cols": [
+                          {
+                            "col": {
+                              "domainObject": null,
+                              "fieldSet": [
+                                {
+                                  "name": "Contact Details",
+                                  "action": [
+                                    {
+                                      "named": null,
+                                      "describedAs": null,
+                                      "metadataError": null,
+                                      "link": {
+                                        "rel": "urn:org.restfulobjects:rels/action",
+                                        "method": "GET",
+                                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/5/actions/create",
+                                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-action\""
+                                      },
+                                      "id": "create",
+                                      "bookmarking": null,
+                                      "cssClass": null,
+                                      "cssClassFa": null,
+                                      "cssClassFaPosition": null,
+                                      "hidden": null,
+                                      "namedEscaped": null,
+                                      "position": "PANEL",
+                                      "promptStyle": null
+                                    },
+                                    {
+                                      "named": null,
+                                      "describedAs": null,
+                                      "metadataError": null,
+                                      "link": {
+                                        "rel": "urn:org.restfulobjects:rels/action",
+                                        "method": "GET",
+                                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/5/actions/edit",
+                                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-action\""
+                                      },
+                                      "id": "edit",
+                                      "bookmarking": null,
+                                      "cssClass": null,
+                                      "cssClassFa": null,
+                                      "cssClassFaPosition": null,
+                                      "hidden": null,
+                                      "namedEscaped": null,
+                                      "position": "PANEL",
+                                      "promptStyle": null
+                                    },
+                                    {
+                                      "named": null,
+                                      "describedAs": null,
+                                      "metadataError": null,
+                                      "link": {
+                                        "rel": "urn:org.restfulobjects:rels/action",
+                                        "method": "GET",
+                                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/5/actions/delete",
+                                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-action\""
+                                      },
+                                      "id": "delete",
+                                      "bookmarking": null,
+                                      "cssClass": null,
+                                      "cssClassFa": null,
+                                      "cssClassFaPosition": null,
+                                      "hidden": null,
+                                      "namedEscaped": null,
+                                      "position": "PANEL",
+                                      "promptStyle": null
+                                    }
+                                  ],
+                                  "property": [
+                                    {
+                                      "named": null,
+                                      "describedAs": null,
+                                      "metadataError": null,
+                                      "link": {
+                                        "rel": "urn:org.restfulobjects:rels/property",
+                                        "method": "GET",
+                                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/5/properties/name",
+                                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-property\""
+                                      },
+                                      "id": "name",
+                                      "cssClass": null,
+                                      "hidden": null,
+                                      "labelPosition": null,
+                                      "multiLine": null,
+                                      "namedEscaped": null,
+                                      "promptStyle": null,
+                                      "renderedAsDayBefore": null,
+                                      "typicalLength": null,
+                                      "unchanging": null
+                                    },
+                                    {
+                                      "named": null,
+                                      "describedAs": null,
+                                      "metadataError": null,
+                                      "link": {
+                                        "rel": "urn:org.restfulobjects:rels/property",
+                                        "method": "GET",
+                                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/5/properties/company",
+                                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-property\""
+                                      },
+                                      "id": "company",
+                                      "cssClass": null,
+                                      "hidden": null,
+                                      "labelPosition": null,
+                                      "multiLine": null,
+                                      "namedEscaped": null,
+                                      "promptStyle": null,
+                                      "renderedAsDayBefore": null,
+                                      "typicalLength": null,
+                                      "unchanging": null
+                                    },
+                                    {
+                                      "named": null,
+                                      "describedAs": null,
+                                      "metadataError": null,
+                                      "link": {
+                                        "rel": "urn:org.restfulobjects:rels/property",
+                                        "method": "GET",
+                                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/5/properties/email",
+                                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-property\""
+                                      },
+                                      "id": "email",
+                                      "cssClass": null,
+                                      "hidden": null,
+                                      "labelPosition": null,
+                                      "multiLine": null,
+                                      "namedEscaped": null,
+                                      "promptStyle": null,
+                                      "renderedAsDayBefore": null,
+                                      "typicalLength": null,
+                                      "unchanging": null
+                                    }
+                                  ],
+                                  "metadataError": null,
+                                  "id": "contact-details",
+                                  "unreferencedActions": null,
+                                  "unreferencedProperties": null
+                                }
+                              ],
+                              "metadataError": null,
+                              "cssClass": null,
+                              "size": null,
+                              "id": null,
+                              "span": 12,
+                              "unreferencedActions": null,
+                              "unreferencedCollections": null
+                            }
+                          }
+                        ],
+                        "metadataError": null,
+                        "cssClass": null,
+                        "id": null
+                      }
+                    ],
+                    "cssClass": null
+                  },
+                  {
+                    "name": "Notes",
+                    "row": [
+                      {
+                        "cols": [
+                          {
+                            "col": {
+                              "domainObject": null,
+                              "fieldSet": [
+                                {
+                                  "name": "Notes",
+                                  "property": [
+                                    {
+                                      "named": null,
+                                      "describedAs": null,
+                                      "metadataError": null,
+                                      "link": {
+                                        "rel": "urn:org.restfulobjects:rels/property",
+                                        "method": "GET",
+                                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/5/properties/notes",
+                                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-property\""
+                                      },
+                                      "id": "notes",
+                                      "cssClass": null,
+                                      "hidden": null,
+                                      "labelPosition": null,
+                                      "multiLine": null,
+                                      "namedEscaped": null,
+                                      "promptStyle": null,
+                                      "renderedAsDayBefore": null,
+                                      "typicalLength": null,
+                                      "unchanging": null
+                                    }
+                                  ],
+                                  "metadataError": null,
+                                  "id": "notes",
+                                  "unreferencedActions": null,
+                                  "unreferencedProperties": null
+                                }
+                              ],
+                              "metadataError": null,
+                              "cssClass": null,
+                              "size": null,
+                              "id": null,
+                              "span": 12,
+                              "unreferencedActions": null,
+                              "unreferencedCollections": null
+                            }
+                          }
+                        ],
+                        "metadataError": null,
+                        "cssClass": null,
+                        "id": null
+                      }
+                    ],
+                    "cssClass": null
+                  },
+                  {
+                    "name": "Other",
+                    "row": [
+                      {
+                        "cols": [
+                          {
+                            "col": {
+                              "domainObject": null,
+                              "fieldSet": [
+                                {
+                                  "name": "Other",
+                                  "metadataError": null,
+                                  "id": "other",
+                                  "unreferencedActions": null,
+                                  "unreferencedProperties": true
+                                }
+                              ],
+                              "metadataError": null,
+                              "cssClass": null,
+                              "size": null,
+                              "id": null,
+                              "span": 12,
+                              "unreferencedActions": null,
+                              "unreferencedCollections": null
+                            }
+                          }
+                        ],
+                        "metadataError": null,
+                        "cssClass": null,
+                        "id": null
+                      }
+                    ],
+                    "cssClass": null
+                  },
+                  {
+                    "name": "Metadata",
+                    "row": [
+                      {
+                        "cols": [
+                          {
+                            "col": {
+                              "domainObject": null,
+                              "fieldSet": [
+                                {
+                                  "name": "Metadata",
+                                  "action": [
+                                    {
+                                      "named": null,
+                                      "describedAs": null,
+                                      "metadataError": null,
+                                      "link": {
+                                        "rel": "urn:org.restfulobjects:rels/action",
+                                        "method": "GET",
+                                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/5/actions/clearHints",
+                                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-action\""
+                                      },
+                                      "id": "clearHints",
+                                      "bookmarking": null,
+                                      "cssClass": null,
+                                      "cssClassFa": null,
+                                      "cssClassFaPosition": null,
+                                      "hidden": null,
+                                      "namedEscaped": null,
+                                      "position": "PANEL_DROPDOWN",
+                                      "promptStyle": null
+                                    },
+                                    {
+                                      "named": null,
+                                      "describedAs": null,
+                                      "metadataError": null,
+                                      "link": {
+                                        "rel": "urn:org.restfulobjects:rels/action",
+                                        "method": "GET",
+                                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/5/actions/downloadLayoutXml",
+                                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-action\""
+                                      },
+                                      "id": "downloadLayoutXml",
+                                      "bookmarking": null,
+                                      "cssClass": null,
+                                      "cssClassFa": null,
+                                      "cssClassFaPosition": null,
+                                      "hidden": null,
+                                      "namedEscaped": null,
+                                      "position": "PANEL_DROPDOWN",
+                                      "promptStyle": null
+                                    },
+                                    {
+                                      "named": null,
+                                      "describedAs": null,
+                                      "metadataError": null,
+                                      "link": {
+                                        "rel": "urn:org.restfulobjects:rels/action",
+                                        "method": "GET",
+                                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/5/actions/downloadJdoMetadata",
+                                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-action\""
+                                      },
+                                      "id": "downloadJdoMetadata",
+                                      "bookmarking": null,
+                                      "cssClass": null,
+                                      "cssClassFa": null,
+                                      "cssClassFaPosition": null,
+                                      "hidden": null,
+                                      "namedEscaped": null,
+                                      "position": "PANEL_DROPDOWN",
+                                      "promptStyle": null
+                                    },
+                                    {
+                                      "named": null,
+                                      "describedAs": null,
+                                      "metadataError": null,
+                                      "link": {
+                                        "rel": "urn:org.restfulobjects:rels/action",
+                                        "method": "GET",
+                                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/5/actions/rebuildMetamodel",
+                                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-action\""
+                                      },
+                                      "id": "rebuildMetamodel",
+                                      "bookmarking": null,
+                                      "cssClass": null,
+                                      "cssClassFa": null,
+                                      "cssClassFaPosition": null,
+                                      "hidden": null,
+                                      "namedEscaped": null,
+                                      "position": "PANEL_DROPDOWN",
+                                      "promptStyle": null
+                                    }
+                                  ],
+                                  "property": [
+                                    {
+                                      "named": null,
+                                      "describedAs": null,
+                                      "metadataError": null,
+                                      "link": {
+                                        "rel": "urn:org.restfulobjects:rels/property",
+                                        "method": "GET",
+                                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/5/properties/datanucleusIdLong",
+                                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-property\""
+                                      },
+                                      "id": "datanucleusIdLong",
+                                      "cssClass": null,
+                                      "hidden": null,
+                                      "labelPosition": null,
+                                      "multiLine": null,
+                                      "namedEscaped": null,
+                                      "promptStyle": null,
+                                      "renderedAsDayBefore": null,
+                                      "typicalLength": null,
+                                      "unchanging": null
+                                    },
+                                    {
+                                      "named": null,
+                                      "describedAs": null,
+                                      "metadataError": null,
+                                      "link": {
+                                        "rel": "urn:org.restfulobjects:rels/property",
+                                        "method": "GET",
+                                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/5/properties/datanucleusVersionLong",
+                                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-property\""
+                                      },
+                                      "id": "datanucleusVersionLong",
+                                      "cssClass": null,
+                                      "hidden": null,
+                                      "labelPosition": null,
+                                      "multiLine": null,
+                                      "namedEscaped": null,
+                                      "promptStyle": null,
+                                      "renderedAsDayBefore": null,
+                                      "typicalLength": null,
+                                      "unchanging": null
+                                    },
+                                    {
+                                      "named": null,
+                                      "describedAs": null,
+                                      "metadataError": null,
+                                      "link": {
+                                        "rel": "urn:org.restfulobjects:rels/property",
+                                        "method": "GET",
+                                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/5/properties/datanucleusVersionTimestamp",
+                                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-property\""
+                                      },
+                                      "id": "datanucleusVersionTimestamp",
+                                      "cssClass": null,
+                                      "hidden": null,
+                                      "labelPosition": null,
+                                      "multiLine": null,
+                                      "namedEscaped": null,
+                                      "promptStyle": null,
+                                      "renderedAsDayBefore": null,
+                                      "typicalLength": null,
+                                      "unchanging": null
+                                    }
+                                  ],
+                                  "metadataError": null,
+                                  "id": "metadata",
+                                  "unreferencedActions": null,
+                                  "unreferencedProperties": null
+                                }
+                              ],
+                              "metadataError": null,
+                              "cssClass": null,
+                              "size": null,
+                              "id": null,
+                              "span": 12,
+                              "unreferencedActions": null,
+                              "unreferencedCollections": null
+                            }
+                          }
+                        ],
+                        "metadataError": null,
+                        "cssClass": null,
+                        "id": null
+                      }
+                    ],
+                    "cssClass": null
+                  }
+                ],
+                "metadataError": null,
+                "cssClass": null,
+                "unreferencedCollections": null,
+                "collapseIfOne": null
+              }
+            ],
+            "metadataError": null,
+            "cssClass": null,
+            "size": null,
+            "id": null,
+            "span": 6,
+            "unreferencedActions": null,
+            "unreferencedCollections": null
+          }
+        },
+        {
+          "col": {
+            "domainObject": null,
+            "tabGroup": [
+              {
+                "tab": [
+                  {
+                    "name": "Contact Details",
+                    "row": [
+                      {
+                        "cols": [
+                          {
+                            "col": {
+                              "domainObject": null,
+                              "collection": [
+                                {
+                                  "named": null,
+                                  "describedAs": null,
+                                  "sortedBy": null,
+                                  "action": [
+                                    {
+                                      "named": null,
+                                      "describedAs": null,
+                                      "metadataError": null,
+                                      "link": {
+                                        "rel": "urn:org.restfulobjects:rels/action",
+                                        "method": "GET",
+                                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/5/actions/addContactNumber",
+                                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-action\""
+                                      },
+                                      "id": "addContactNumber",
+                                      "bookmarking": null,
+                                      "cssClass": null,
+                                      "cssClassFa": null,
+                                      "cssClassFaPosition": null,
+                                      "hidden": null,
+                                      "namedEscaped": null,
+                                      "position": null,
+                                      "promptStyle": null
+                                    },
+                                    {
+                                      "named": null,
+                                      "describedAs": null,
+                                      "metadataError": null,
+                                      "link": {
+                                        "rel": "urn:org.restfulobjects:rels/action",
+                                        "method": "GET",
+                                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/5/actions/removeContactNumber",
+                                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-action\""
+                                      },
+                                      "id": "removeContactNumber",
+                                      "bookmarking": null,
+                                      "cssClass": null,
+                                      "cssClassFa": null,
+                                      "cssClassFaPosition": null,
+                                      "hidden": null,
+                                      "namedEscaped": null,
+                                      "position": null,
+                                      "promptStyle": null
+                                    }
+                                  ],
+                                  "metadataError": null,
+                                  "link": {
+                                    "rel": "urn:org.restfulobjects:rels/collection",
+                                    "method": "GET",
+                                    "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/5/collections/contactNumbers",
+                                    "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-collection\""
+                                  },
+                                  "id": "contactNumbers",
+                                  "cssClass": null,
+                                  "defaultView": "table",
+                                  "hidden": null,
+                                  "namedEscaped": null,
+                                  "paged": null
+                                },
+                                {
+                                  "named": null,
+                                  "describedAs": null,
+                                  "sortedBy": null,
+                                  "action": [
+                                    {
+                                      "named": null,
+                                      "describedAs": null,
+                                      "metadataError": null,
+                                      "link": {
+                                        "rel": "urn:org.restfulobjects:rels/action",
+                                        "method": "GET",
+                                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/5/actions/addContactRole",
+                                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-action\""
+                                      },
+                                      "id": "addContactRole",
+                                      "bookmarking": null,
+                                      "cssClass": null,
+                                      "cssClassFa": null,
+                                      "cssClassFaPosition": null,
+                                      "hidden": null,
+                                      "namedEscaped": null,
+                                      "position": null,
+                                      "promptStyle": null
+                                    },
+                                    {
+                                      "named": null,
+                                      "describedAs": null,
+                                      "metadataError": null,
+                                      "link": {
+                                        "rel": "urn:org.restfulobjects:rels/action",
+                                        "method": "GET",
+                                        "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/5/actions/removeContactRole",
+                                        "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-action\""
+                                      },
+                                      "id": "removeContactRole",
+                                      "bookmarking": null,
+                                      "cssClass": null,
+                                      "cssClassFa": null,
+                                      "cssClassFaPosition": null,
+                                      "hidden": null,
+                                      "namedEscaped": null,
+                                      "position": null,
+                                      "promptStyle": null
+                                    }
+                                  ],
+                                  "metadataError": null,
+                                  "link": {
+                                    "rel": "urn:org.restfulobjects:rels/collection",
+                                    "method": "GET",
+                                    "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/5/collections/contactRoles",
+                                    "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-collection\""
+                                  },
+                                  "id": "contactRoles",
+                                  "cssClass": null,
+                                  "defaultView": "table",
+                                  "hidden": null,
+                                  "namedEscaped": null,
+                                  "paged": null
+                                }
+                              ],
+                              "metadataError": null,
+                              "cssClass": null,
+                              "size": null,
+                              "id": null,
+                              "span": 12,
+                              "unreferencedActions": null,
+                              "unreferencedCollections": null
+                            }
+                          }
+                        ],
+                        "metadataError": null,
+                        "cssClass": null,
+                        "id": null
+                      }
+                    ],
+                    "cssClass": null
+                  }
+                ],
+                "metadataError": null,
+                "cssClass": null,
+                "unreferencedCollections": null,
+                "collapseIfOne": false
+              }
+            ],
+            "metadataError": null,
+            "cssClass": null,
+            "size": null,
+            "id": null,
+            "span": 6,
+            "unreferencedActions": null,
+            "unreferencedCollections": null
+          }
+        },
+        {
+          "col": {
+            "domainObject": null,
+            "metadataError": null,
+            "cssClass": null,
+            "size": null,
+            "id": null,
+            "span": 17,
+            "unreferencedActions": null,
+            "unreferencedCollections": true
+          }
+        }
+      ],
+      "metadataError": null,
+      "cssClass": null,
+      "id": null
+    }
+  ],
+  "cssClass": null
+}

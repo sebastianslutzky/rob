@@ -3,30 +3,74 @@ using System.Collections.Generic;
 using System.Dynamic;
 using System.IO;
 using System.Linq;
-using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json.Linq;
 using RestfulObjectApi.Representation.Types;
 using rob;
 using rob.API.ApacheISISApi;
+using rob.API.ApacheISISApi.Representations;
+using rob.API.ApacheISISApi.Representations.layout;
 
 namespace unittests
 {
-    [TestClass]
-    public class UnitTest1
+    public class UnitTestBase
     {
-         private TestContext testContextInstance;
-
-        /// <summary>
-        ///  Gets or sets the test context which provides
-        ///  information about and functionality for the current test run.
-        ///</summary>
+        private TestContext testContextInstance;
         public TestContext TestContext
         {
             get { return testContextInstance; }
             set { testContextInstance = value; }
         }
+
+        protected IsisSingleObject LoadIsisObject()
+        {
+            var fileName = Directory.GetCurrentDirectory();
+            var raw = System.IO.File.ReadAllText("data/contact.json");
+
+            var obj = JObject.Parse(raw);
+            var isisObj = new IsisSingleObject(obj);
+            return isisObj;
+        }
+    }
+
+    [TestClass]
+    public class LayoutTests : UnitTestBase
+    {
+
+
+        [TestMethod]
+        public void SingleObjectLayoutLink()
+        {
+            var isisObj = LoadIsisObject();
+            var layoutLink = isisObj.Layout;
+
+            Assert.IsNotNull(layoutLink);
+        }
+
+        [TestMethod]
+        public void ObjectLayout_Rows()
+        {
+            var raw = System.IO.File.ReadAllText("data/layout.json");
+            var layout = System.Text.Json.JsonSerializer.Deserialize<ObjectLayout>(raw);
+            Assert.IsNotNull(layout.row);
+            Assert.AreEqual(2, layout.row.Length);
+        }
+
+
+
+
+    }
+        [TestClass]
+    public class UnitTest1:UnitTestBase
+    {
+    
+        /// <summary>
+        ///  Gets or sets the test context which provides
+        ///  information about and functionality for the current test run.
+        ///</summary>
+     
         private Api api;
         private ApacheIsisApi isisApi;
 
@@ -129,15 +173,7 @@ namespace unittests
             Assert.AreEqual("Benoît Fouré", name);
         }
 
-        private IsisSingleObject LoadIsisObject()
-        {
-            var fileName = Directory.GetCurrentDirectory();
-            var raw = System.IO.File.ReadAllText("data/contact.json");
-
-            var obj = JObject.Parse(raw);
-            var isisObj = new IsisSingleObject(obj);
-            return isisObj;
-        }
+    
 
         [TestMethod]
         public void SingleObjectRO() {
@@ -146,13 +182,7 @@ namespace unittests
             Assert.AreEqual(5, isisObj.Links.Length);
         }
 
-        [TestMethod]
-        public void SingleObjectLayoutLink (){
-            var isisObj = LoadIsisObject();
-            var layoutLink = isisObj.Layout;
-
-            Assert.IsNotNull(layoutLink);
-        }
+     
 
         //integ test! (loads layout)
         [TestMethod]

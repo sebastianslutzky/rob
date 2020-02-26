@@ -6,17 +6,23 @@
 @using Blazor.Extensions.Logging;
 @using rob.Pages.ListView;
 @using rob.Services;
-@using rob.Pages.ObjectView;
+@using rob.Pages.ObjectViews;
 
-@if(FocusObject != null){
-    if(FocusObjectAsIsisObject != null){
-    <IsisList Context="FocusObjectAsIsisObject"/>
+@if (FocusObject != null)
+{
+    //TODO: move conditionals to code behind to simplify this template
+    if (FocusObjectAsIsisObject != null)
+    {
+        <IsisList Context="FocusObjectAsIsisObject" />
     }
     else
+   if (FocusObjectAsIsisSingleObject != null & ObjectLayout != null)
     {
-    <CascadingValue Value="FocusObjectAsIsisSingleObject">
-        <ObjectView/>
-    </CascadingValue>
+        <CascadingValue Value="FocusObjectAsIsisSingleObject" Name="Context">
+            <CascadingValue Value="ObjectLayout" Name="Layout">
+                <ObjectView />
+            </CascadingValue>
+        </CascadingValue>
     }
 }
 
