@@ -1,11 +1,10 @@
 ﻿@using rob.Pages.ObjectViews;
 
-@inherits LayoutBase
+@inherits LayoutBase<rob.API.ApacheISISApi.Representations.layout.ObjectLayout>
 
 @foreach (var row in Rows)
 {
-    <p>Layout grid</p>
-    @Context["$$title"]
+    <LayoutRowView Context="Context" Layout="row" />
 }
 
 

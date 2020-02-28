@@ -1,4 +1,4 @@
-﻿@inherits LayoutBase;
+﻿@inherits LayoutBase<rob.API.ApacheISISApi.Representations.layout.ObjectLayout>;
 
 <div class="row">
     <div class="col-lg-12">
@@ -23,7 +23,8 @@
                         </div>
                     </div>
                 </div>
-               <LayoutGridView /> </div>
+                <LayoutGridView Context="Context" Layout="Layout" /> 
+                </div>
         </div>
     </div>
 </div>

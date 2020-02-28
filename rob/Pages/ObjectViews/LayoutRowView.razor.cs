@@ -8,16 +8,17 @@ using rob.API.ApacheISISApi.Representations.layout;
 namespace rob.Pages.ObjectViews{
 
 
-    public partial class LayoutRowView:ComponentBase
+    public partial class LayoutRowView
     {
         [Inject]
         protected ILogger<LayoutRowView> Logger{get;set;}
+        
+        private LayoutColumn[] _columns;
 
-        [CascadingParameter]
-        public IsisSingleObject Context { get; set; }
-
-        [CascadingParameter]
-        public ObjectLayout Layout { get; set; }
-
-    }
+        protected override void OnLayoutSet(LayoutRow value)
+        {
+            base.OnLayoutSet(value);
+            _columns = value.cols;
+        }
+     }
 }

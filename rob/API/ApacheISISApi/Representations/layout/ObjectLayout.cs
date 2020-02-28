@@ -5,5 +5,10 @@ namespace rob.API.ApacheISISApi.Representations.layout
     {
         public LayoutRow[] row { get; set; }
     }
-    public class LayoutRow { }
+
+    public class LayoutRow
+    {
+        public LayoutColumn[] cols { get; set; }
+    }
+    public class LayoutColumn{}
 }

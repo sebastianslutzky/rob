@@ -18,11 +18,7 @@
     else
    if (FocusObjectAsIsisSingleObject != null & ObjectLayout != null)
     {
-        <CascadingValue Value="FocusObjectAsIsisSingleObject" Name="Context">
-            <CascadingValue Value="ObjectLayout" Name="Layout">
-                <ObjectView />
-            </CascadingValue>
-        </CascadingValue>
+        <ObjectView Context="FocusObjectAsIsisSingleObject"  Layout="ObjectLayout" />
     }
 }
 

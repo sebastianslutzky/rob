@@ -11,7 +11,6 @@ using RestfulObjectApi.Representation.Types;
 using rob;
 using rob.API.ApacheISISApi;
 using rob.API.ApacheISISApi.Representations;
-using rob.API.ApacheISISApi.Representations.layout;
 
 namespace unittests
 {
@@ -36,33 +35,6 @@ namespace unittests
     }
 
     [TestClass]
-    public class LayoutTests : UnitTestBase
-    {
-
-
-        [TestMethod]
-        public void SingleObjectLayoutLink()
-        {
-            var isisObj = LoadIsisObject();
-            var layoutLink = isisObj.Layout;
-
-            Assert.IsNotNull(layoutLink);
-        }
-
-        [TestMethod]
-        public void ObjectLayout_Rows()
-        {
-            var raw = System.IO.File.ReadAllText("data/layout.json");
-            var layout = System.Text.Json.JsonSerializer.Deserialize<ObjectLayout>(raw);
-            Assert.IsNotNull(layout.row);
-            Assert.AreEqual(2, layout.row.Length);
-        }
-
-
-
-
-    }
-        [TestClass]
     public class UnitTest1:UnitTestBase
     {
     

@@ -4,16 +4,18 @@ using rob.API.ApacheISISApi.Representations.layout;
 
 namespace rob.Pages.ObjectViews
 {
-    public  partial class LayoutBase : ComponentBase
+    public  partial class LayoutBase<TLayout> : ComponentBase
     {
      
-        [CascadingParameter(Name = "Context")] protected IsisSingleObject Context { get; set; }
-
-        private ObjectLayout _layout;
-        [CascadingParameter(Name = "Layout")]
-        public ObjectLayout Layout
+        [Parameter]
+        public IsisSingleObject Context { get; set; }
+        
+       
+        private TLayout _layout;
+        [Parameter]
+        public TLayout Layout
         {
-            get { return _layout; }
+            get => _layout;
             set
             {
                 _layout = value;
@@ -24,7 +26,6 @@ namespace rob.Pages.ObjectViews
                 StateHasChanged();
             }}
 
-        protected virtual void OnLayoutSet(ObjectLayout value)
-        {}
+        protected virtual void OnLayoutSet(TLayout value){}
     }
 }

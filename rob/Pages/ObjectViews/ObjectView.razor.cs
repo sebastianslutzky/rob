@@ -7,7 +7,7 @@ using rob.API.ApacheISISApi.Representations.layout;
 
 namespace rob.Pages.ObjectViews
 {
-    public partial class ObjectView: LayoutBase
+    public partial class ObjectView: LayoutBase<ObjectLayout>
     {
         [Inject]
         protected ILogger<ObjectView> Logger { get; set; }

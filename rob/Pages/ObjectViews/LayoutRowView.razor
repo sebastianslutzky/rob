@@ -1,2 +1,5 @@
-﻿<p>Layout row</p>
-@this.Context["$$title"] 
+﻿@inherits LayoutBase<rob.API.ApacheISISApi.Representations.layout.LayoutRow>
+@foreach (var col in _columns)
+{
+    <LayoutColumnView Context="Context" Layout="col"/>
+}
