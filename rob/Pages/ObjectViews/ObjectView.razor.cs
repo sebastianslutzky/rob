@@ -2,8 +2,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Logging;
 using rob.API.ApacheISISApi;
-using rob.API.ApacheISISApi.Representations;
-using rob.API.ApacheISISApi.Representations.layout;
+using rob.layout.representations;
 
 namespace rob.Pages.ObjectViews
 {

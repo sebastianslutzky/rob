@@ -1,39 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
-using System.IO;
 using System.Linq;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Newtonsoft.Json.Linq;
 using RestfulObjectApi.Representation.Types;
 using rob;
-using rob.API.ApacheISISApi;
-using rob.API.ApacheISISApi.Representations;
 
 namespace unittests
 {
-    public class UnitTestBase
-    {
-        private TestContext testContextInstance;
-        public TestContext TestContext
-        {
-            get { return testContextInstance; }
-            set { testContextInstance = value; }
-        }
-
-        protected IsisSingleObject LoadIsisObject()
-        {
-            var fileName = Directory.GetCurrentDirectory();
-            var raw = System.IO.File.ReadAllText("data/contact.json");
-
-            var obj = JObject.Parse(raw);
-            var isisObj = new IsisSingleObject(obj);
-            return isisObj;
-        }
-    }
-
     [TestClass]
     public class UnitTest1:UnitTestBase
     {

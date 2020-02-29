@@ -3,7 +3,7 @@ using rob.API.ApacheISISApi;
 using Microsoft.Extensions.Logging;
 using Blazor.Extensions.Logging;
 using System.Threading.Tasks;
-using rob.API.ApacheISISApi.Representations.layout;
+using rob.layout.representations;
 
 namespace rob.Pages.ObjectViews{
 
@@ -13,7 +13,7 @@ namespace rob.Pages.ObjectViews{
         [Inject]
         protected ILogger<LayoutRowView> Logger{get;set;}
         
-        private LayoutColumn[] _columns;
+        private LayoutColumnCollection[] _columns;
 
         protected override void OnLayoutSet(LayoutRow value)
         {

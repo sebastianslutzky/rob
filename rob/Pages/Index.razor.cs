@@ -5,8 +5,7 @@ using Microsoft.Extensions.Logging;
 using Blazor.Extensions.Logging;
 using rob.Services;
 using rob.API.ApacheISISApi;
-using rob.API.ApacheISISApi.Representations;
-using rob.API.ApacheISISApi.Representations.layout;
+using rob.layout.representations;
 
 namespace rob.Pages{
 

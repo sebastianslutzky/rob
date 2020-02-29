@@ -1,0 +1,38 @@
+@using rob.layout.representations
+@inherits LayoutBase<rob.layout.representations.LayoutTabGroup>
+
+<div class="tabGroups tabbable">
+    <ul class="nav nav-tabs">
+        
+        @if (Layout?.tab != null)
+        {
+         
+            for (int i=0; i < Layout.tab.Length;i++)
+            {
+                int indexForClosure = i;
+                LayoutTab tab = Layout.tab[i];
+                <li  class="@listItemClass(i)">
+                    <a @onclick="@(() => SelectTab(indexForClosure))">
+                        <span>@tab.name</span>
+                    </a>
+                </li>
+            }
+        }
+        <!--  <li *ngFor='let tab of Layout.tab;let i = index' class="tab{{i}} {{activeClassIfApplies(i)}} link">
+            <a (click)="select(i)">
+                <span>{{tab.name}}</span></a></li> -->
+    </ul>
+    
+    @if (SelectedTab != null)
+    {
+        <div class="tab-content">
+            <div class="tabPanel">
+                @foreach (var row in SelectedTab.row)
+                {
+                    <LayoutRow Layout="row" Context="Context" />
+                }
+            </div>
+        </div> 
+    }
+  
+</div>

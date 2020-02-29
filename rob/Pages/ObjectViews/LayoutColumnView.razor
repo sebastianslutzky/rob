@@ -1,2 +1,21 @@
-@inherits LayoutBase<rob.API.ApacheISISApi.Representations.layout.LayoutColumn>
-<p>Column component</p>
+@inherits LayoutBase<rob.layout.representations.LayoutColumn>
+@if (Layout?.tabGroup != null)
+{
+    foreach (var tabGroup in Layout.tabGroup)
+    {
+      <LayoutTabGroupView Layout="tabGroup"  Context="Context" />
+    }  
+}
+
+
+<!-- < app-tab-group *ngFor="let tabGroup of TabGroups" [Layout]='tabGroup'
+               [LayoutContext]="row"
+               [ObjectContext]="ObjectContext" > -->
+    <!-- <div *ngFor='let tab of tabGroup.tab' > -->
+    <!-- <mat-tab *ngIf="isNotEmpty(tab)"  label='{{tab.name}} '>
+        <app-layout-row *ngFor="let row of this.asArray(tab.row)" 
+                        [LayoutContext]="row"
+                        [ObjectContext]="ObjectContext" >
+        </app-layout-row>
+    </mat-tab> -->
+    <!-- </div> -->

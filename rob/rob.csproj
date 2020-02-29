@@ -21,7 +21,6 @@
     <Folder Include="API\ApacheISISApi\Representations\Types\" />
     <Folder Include="API\RestfulObjectsApi\Representations\Abstract\" />
     <Folder Include="API\RestfulObjectsApi\Representations\Extensions\" />
-    <Folder Include="API\ApacheISISApi\Representations\layout\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="API\ApacheISISApi\Representations\Types\ExtendedLink.cs" />
@@ -30,5 +29,8 @@
     <Content Update="Pages\NavBar\Banner.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\rob.layout.representations\rob.layout.representations.csproj" />
   </ItemGroup>
 </Project>
