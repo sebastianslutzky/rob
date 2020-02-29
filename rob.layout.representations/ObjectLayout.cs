@@ -9,7 +9,7 @@ namespace rob.layout.representations
 
     public class LayoutRow
     {
-        public LayoutColumnCollection[] cols { get; set; }
+        public LayoutColumnCollection[] cols { get; set; } 
     }
 
     public class LayoutColumnCollection
@@ -20,6 +20,7 @@ namespace rob.layout.representations
     public class LayoutColumn
     {
         public LayoutTabGroup[] tabGroup { get; set; }
+        public LayoutFieldSet[] fieldSet { get; set; }
     }
 
     public class LayoutTabGroup
@@ -31,5 +32,10 @@ namespace rob.layout.representations
     {
         public string name { get; set; }
         public LayoutRow[] row { get; set; }
+    }
+
+    public class LayoutFieldSet
+    {
+        public string name { get; set; }
     }
 }

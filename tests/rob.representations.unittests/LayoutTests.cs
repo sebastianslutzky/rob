@@ -65,6 +65,18 @@ namespace unittests.representations
          }
          
          [TestMethod]
+         public void ColumnLayout_fieldSet()
+         {
+             var raw = System.IO.File.ReadAllText("data/layout.json");
+             var layout = System.Text.Json.JsonSerializer.Deserialize<ObjectLayout>(raw);
+             var fieldSet = layout.row[1].cols[0].col.tabGroup[0].tab[0].row[0].cols[0].col.fieldSet;
+             Assert.IsNotNull(fieldSet);
+             Assert.AreEqual(1, fieldSet.Length);
+             Assert.AreEqual("Contact Details",fieldSet[0].name);
+
+         }
+         
+         [TestMethod]
          public void TabGroup_Tab()
          {
              var raw = System.IO.File.ReadAllText("data/layout.json");
@@ -73,6 +85,7 @@ namespace unittests.representations
              Assert.IsNotNull(tab);
              Assert.AreEqual(4, tab.Length);
          }
+         
          [TestMethod]
          public void Tab_Row()
          {

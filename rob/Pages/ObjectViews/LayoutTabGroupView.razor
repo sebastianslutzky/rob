@@ -6,12 +6,11 @@
         
         @if (Layout?.tab != null)
         {
-         
             for (int i=0; i < Layout.tab.Length;i++)
             {
                 int indexForClosure = i;
                 LayoutTab tab = Layout.tab[i];
-                <li  class="@listItemClass(i)">
+                <li  class="@listItemClass(indexForClosure)">
                     <a @onclick="@(() => SelectTab(indexForClosure))">
                         <span>@tab.name</span>
                     </a>
@@ -29,7 +28,7 @@
             <div class="tabPanel">
                 @foreach (var row in SelectedTab.row)
                 {
-                    <LayoutRow Layout="row" Context="Context" />
+                    <LayoutRowView Layout="row" Context="Context" />
                 }
             </div>
         </div> 

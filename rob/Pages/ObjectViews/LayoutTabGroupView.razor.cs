@@ -15,7 +15,16 @@ namespace rob.Pages.ObjectViews{
 
         private int _selectedIndex;
         private LayoutTab SelectedTab { get; set; }
-    
+
+        protected override void OnInitialized()
+        {
+            base.OnInitialized();
+            if (Layout.tab != null)
+            {
+                SelectTab(0);    
+            }
+        }
+
         public string listItemClass(int i)
         {
             var active = i == _selectedIndex? "active":string.Empty;
