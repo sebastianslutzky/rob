@@ -61,7 +61,7 @@
             menus.Add("PRIMARY",primaryMenu);
             menus.Add("SECONDARY",secondaryMenu);
             menus.Add("TERTIARY",tertiaryMenu);
-            logger.LogInformation(menus);
+            //logger.LogInformation(menus);
 
             if(Context == null){
                 throw new ArgumentNullException("Context");
@@ -95,7 +95,7 @@
                     throw new ArgumentNullException("menuismissing");
                 }
 
-                logger.LogInformation(menu);
+                //logger.LogInformation(menu);
                 if(x.Result.HasMembers){
                     menu.AddService(x.Result);
                 }

@@ -25,13 +25,13 @@ namespace rob.Pages.NavBar {
 
     protected override async Task OnInitializedAsync()
     {
-        logger.LogInformation(Context);
+       // logger.LogInformation(Context);
         action = await this.Api.Load<ObjectAction>(Context.details);
 
         descriptor = await this.Api.Load<ActionDescription>(action.DescribedBy); 
         friendlyName = descriptor.extensions.friendlyName;
-        logger.LogInformation("descriptor");
-        logger.LogInformation(descriptor);
+        //logger.LogInformation("descriptor");
+        //logger.LogInformation(descriptor);
     }
         public void InvokeAction(){
             Invoker.InvokeAction(action,friendlyName);

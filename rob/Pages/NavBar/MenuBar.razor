@@ -14,19 +14,19 @@
                             var service = services[i];
                             if(lastKnownCategory != service.title){
                               if(!string.IsNullOrEmpty(lastKnownCategory)){
-                                logger.LogInformation($"({title})lastcat:{lastKnownCategory}. this one: {service.title} divider: @lastKnownCategory-@service.title");
+                                //logger.LogInformation($"({title})lastcat:{lastKnownCategory}. this one: {service.title} divider: @lastKnownCategory-@service.title");
                                 <li class="divider @lastKnownCategory-@service.title"></li>
                               }
                               else{
-                                logger.LogInformation("no categoy known");
+                                logger.LogInformation("no category known");
                               }
 
-                              logger.LogInformation($"from {lastKnownCategory} to {service.title}");
+                              //logger.LogInformation($"from {lastKnownCategory} to {service.title}");
                               lastKnownCategory = service.title;
                             }
 
                             foreach(var accion in service.members){
-                              logger.LogInformation($"adding ({service.title}) {accion.Value}");
+                              //logger.LogInformation($"adding ({service.title}) {accion.Value}");
                                  <MenuAction Context='accion.Value'/>
                             }
 

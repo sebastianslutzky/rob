@@ -49,7 +49,7 @@ else
     protected override async Task OnInitializedAsync()
     {
         var obj = await Http.GetJsonAsync<Resource<Link>>("sample-data/HomePage.json");
-        logger.LogInformation(obj);
+        //logger.LogInformation(obj);
         var obj1 = await api.LoadHomePage();
     }
 

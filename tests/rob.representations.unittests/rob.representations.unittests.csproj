@@ -22,6 +22,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\rob.layout.representations\rob.layout.representations.csproj" />
+      <ProjectReference Include="..\..\rob\rob.csproj" />
     </ItemGroup>
 
 </Project>

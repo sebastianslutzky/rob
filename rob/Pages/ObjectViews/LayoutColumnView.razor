@@ -9,13 +9,12 @@
 
 @if(Layout?.fieldSet != null) 
 {
-    <p>property group should be here</p>
     foreach (var fieldSet in Layout.fieldSet)
     {
         <LayoutPropertyGroupView
             Context="Context"    
             Layout="fieldSet"
-            />
+            /> 
     }
 }
 

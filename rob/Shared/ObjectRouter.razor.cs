@@ -19,15 +19,10 @@ public partial class ObjectRouter: ComponentBase{
 
     protected async override void OnInitialized()
     {
-       logger.LogInformation(Resource);
+       //logger.LogInformation(Resource);
        var loadedObject = await this.IsisApi.LoadAsIsisSingleObject(new Link(){href=Resource,method= "Get" });
        Publisher.Publish(this,loadedObject);
-       
-       //todo: use an ObjectResource type and start exposing all details here
-       // then raise an event that should be listened by the desktop
-       
-       //TODO: call a pushlisher.publish(loadedObject)
-       
+
     }
 }
 }

@@ -1,6 +1,7 @@
 using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json.Linq;
+using rob.API.ApacheISISApi;
 using rob.layout.representations;
 
 namespace unittests.representations
@@ -14,8 +15,16 @@ namespace unittests.representations
             set { testContextInstance = value; }
         }
         
+        protected IsisSingleObject LoadIsisSingleObject()
+        {
+            var raw = System.IO.File.ReadAllText("data/contact.json");
+            var token = JObject.Parse(raw);
+            var iso = new IsisSingleObject(token);
+            return iso;
+        }
+        
     }
-    
+
     [TestClass]
     public class LayoutTests : UnitTestBase
     {
@@ -73,8 +82,27 @@ namespace unittests.representations
              Assert.IsNotNull(fieldSet);
              Assert.AreEqual(1, fieldSet.Length);
              Assert.AreEqual("Contact Details",fieldSet[0].name);
-
          }
+         
+         [TestMethod]
+         public void FieldSet_Property()
+         {
+             var raw = System.IO.File.ReadAllText("data/layout.json");
+             var layout = System.Text.Json.JsonSerializer.Deserialize<ObjectLayout>(raw);
+             var fieldSet = layout.row[1].cols[0].col.tabGroup[0].tab[0].row[0].cols[0].col.fieldSet[0];
+             Assert.IsNotNull(fieldSet.property);
+             Assert.AreEqual(3, fieldSet.property.Length);
+         }
+         [TestMethod]
+         public void FieldSet_Action()
+         {
+             var raw = System.IO.File.ReadAllText("data/layout.json");
+             var layout = System.Text.Json.JsonSerializer.Deserialize<ObjectLayout>(raw);
+             var fieldSet = layout.row[1].cols[0].col.tabGroup[0].tab[0].row[0].cols[0].col.fieldSet[0];
+             Assert.IsNotNull(fieldSet.action);
+             Assert.AreEqual(3, fieldSet.action.Length);
+         }
+         
          
          [TestMethod]
          public void TabGroup_Tab()

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 using Newtonsoft.Json.Linq;
+using rob.API.ApacheISISApi.Representations;
 
 namespace rob.API.ApacheISISApi
 {
@@ -31,9 +33,13 @@ namespace rob.API.ApacheISISApi
         public IsisSingleObject(JObject decorated)
         {
             Decorated = decorated;
-            var ro = this["$$ro"];
-            var links = ro["links"] as JArray;
-            Links = links.Select(x => new JTokenWrapperLink(x)).ToArray();
+            
+            //RO
+            var localRo = this["$$ro"];
+            ro = localRo.ToObject<ISORO>();
+            var rawMembers = localRo["members"];
+            var membersAsHashTable = rawMembers.ToObject<Dictionary<string,Member>>();
+            ro.members = membersAsHashTable;
         }
 
         public JToken this[string propertyName]
@@ -43,11 +49,15 @@ namespace rob.API.ApacheISISApi
                 return Decorated[propertyName];
             }
         }
+        
+        public ISORO ro { get; private set; }
 
         #region Extracted Fields
         public JToken Title => this["$$title"];
 
-        public ILink Layout => FindByRel(isisRel("object-layout"));
+
+        public ILink Layout => ro.Layout;
+
         #endregion
 
 

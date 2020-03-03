@@ -37,5 +37,17 @@ namespace rob.layout.representations
     public class LayoutFieldSet
     {
         public string name { get; set; }
+        public LayoutProperty[] property { get; set; }
+        public LayoutAction[] action { get; set; }
+    }
+
+    public class LayoutProperty
+    {
+        public string name { get; set; }
+        public string id { get; set; }
+    }
+    public class LayoutAction
+    {
+        public string id { get; set; }
     }
 }
