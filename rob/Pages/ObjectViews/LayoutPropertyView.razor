@@ -1,0 +1,22 @@
+﻿   @switch (_format)
+   {
+     case "string":
+     case "long":
+       //return StringFieldComponent;
+       <p>stringfieldview</p>
+       break;
+     case "javasqltimestamp":
+       <p>timestampfieldview</p>
+       break;
+     // return  TimeStampFieldComponent;
+     case "object":
+       //return ObjectFieldComponentComponent;
+       <p>objectfieldview</p>
+       break;
+     case "boolean":
+       //return BooleanFieldComponent;
+       <p>booleanfieldview</p>
+       break;
+     default:
+       throw new InvalidOperationException("I don't know how to render " + _format);
+   }

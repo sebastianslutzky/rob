@@ -11,5 +11,11 @@ namespace rob.Pages.ObjectViews{
     {
         [Inject]
         protected ILogger<LayoutColumnView> Logger{get;set;}
+
+        protected override void OnInitialized()
+        {
+            base.OnInitialized();
+            
+        }
     }
 }

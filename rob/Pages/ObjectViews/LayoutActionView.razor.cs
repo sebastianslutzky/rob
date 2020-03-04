@@ -43,7 +43,7 @@ namespace rob.Pages.ObjectViews{
             /*const actionLink = this._objectActionLink.links[0].href;
 
             this.metamodel.loadLink(ObjectAction, this._objectActionLink.links[0]).then(
-                objectAction => {
+                objectAction¡ => {
                     this._actionDescriptor['IsForCollection'] = this.IsForCollection;
                     this.invoker.invokeAction(objectAction, this._actionDescriptor);
                 });*/

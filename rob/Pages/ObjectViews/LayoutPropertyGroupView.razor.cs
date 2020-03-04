@@ -1,10 +1,7 @@
 
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Components;
-using rob.API.ApacheISISApi;
 using Microsoft.Extensions.Logging;
-using Blazor.Extensions.Logging;
-using System.Threading.Tasks;
 using rob.layout.representations;
 
 namespace rob.Pages.ObjectViews{
@@ -16,7 +13,7 @@ namespace rob.Pages.ObjectViews{
 
         private string _title;
         private IEnumerable<Member> _contextActions;
-
+        private IEnumerable<Member> _contextProperties;
 
         protected override void OnLayoutSet(LayoutFieldSet value)
         {
@@ -28,6 +25,7 @@ namespace rob.Pages.ObjectViews{
         {
             base.OnInitialized();
             _contextActions = this.Context.ro.Actions;
+            _contextProperties = Context.ro.Properties;
         }
     }
 }

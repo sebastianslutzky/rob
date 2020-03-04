@@ -19,9 +19,10 @@
              </div>
           </div>
           <div class="properties panel-body">
-                  <!--   <app-property *ngFor='let property of ContextProperties' 
-                        [Property]='property'> 
-                     </app-property> -->
+             @foreach (var property in _contextProperties)
+             {
+                <LayoutPropertyView Property="property"/>
+             }
              <div>
              </div>
              <div>
