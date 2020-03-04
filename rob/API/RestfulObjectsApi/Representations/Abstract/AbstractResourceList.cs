@@ -2,7 +2,7 @@
 {
     public ILink Self => FindByRel("self");
 
-    public T[] value { get; set; }
+  
 
     public V extensions { get; set; }
 }

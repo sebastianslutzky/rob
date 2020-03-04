@@ -47,8 +47,8 @@ namespace unittests.representations
         public void ro_links()
         {
             var iso = LoadIsisSingleObject();
-            Assert.IsNotNull(iso.ro.Links);
-            Assert.AreEqual(5,iso.ro.Links.Length);
+            Assert.IsNotNull(iso.ro.links);
+            Assert.AreEqual(5,iso.ro.links.Length);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace rob.Pages.ObjectViews{
     {
         private ActionDescription _actionDescriptor;
         private string _name;
-        private ObjectAction _actionDetails;
+        private ObjectMemberInstance _actionDetails;
 
         [Inject]
         protected ILogger<LayoutActionView> Logger{get;set;}
@@ -29,7 +29,7 @@ namespace rob.Pages.ObjectViews{
         
         protected override async Task OnInitializedAsync()
         {
-            _actionDetails = await Api.Load<ObjectAction>(Action.details);
+            _actionDetails = await Api.Load<ObjectMemberInstance>(Action.details);
             _actionDescriptor = await Api.Load<ActionDescription>(_actionDetails.DescribedBy);
             _name = _actionDescriptor.extensions.friendlyName;
         }
@@ -37,7 +37,7 @@ namespace rob.Pages.ObjectViews{
         private void InvokeAction()
         {
          throw new NotImplementedException();
-         //todo: implement this at the end
+         //implement this at the end
          
             
             /*const actionLink = this._objectActionLink.links[0].href;

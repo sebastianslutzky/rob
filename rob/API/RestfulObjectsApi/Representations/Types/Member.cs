@@ -6,6 +6,7 @@ public class Member : Resource<Link>
     public string memberType { get; set; }
     public ILink details => FindByRel(roRel("details"));
     public MemberExtensions extensions { get; set; }
+    public string value { get; set; }
 }
 
     public class MemberExtensions

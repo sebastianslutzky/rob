@@ -3,11 +3,11 @@ using System.Linq;
 
 public abstract class Resource<T> where T:ILink
 {
-    public T[] Links { get; set; }
+    public T[] links { get; set; }
 
     protected T FindByRel(string rel)
     {
-        return Links.Single(x => x.rel.Contains(rel));
+        return links.Single(x => x.rel.Contains(rel));
     }
 
 

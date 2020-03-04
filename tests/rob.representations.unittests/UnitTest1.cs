@@ -10,7 +10,31 @@ using rob;
 
 namespace unittests
 {
-  
+
+    [TestClass]
+    public class IntegTests:UnitTestBase
+    {
+        
+        [TestMethod]
+        public void GetPropertyInstance()
+        {
+            var root = LoadIsisObject();
+            var prop = root.ro.Properties.ElementAt(0);
+            var propInstance =  this.api.Load<ObjectMemberInstance>(prop.details);
+            propInstance.Wait();
+            var propInstanceResult = propInstance.Result;
+        }
+
+        private Api api;
+        private ApacheIsisApi isisApi;
+
+        [TestInitialize]
+        public void Setup(){
+            api = new Api(new System.Net.Http.HttpClient(),null);
+            isisApi = new ApacheIsisApi(new System.Net.Http.HttpClient(),null);
+        }
+        
+    }
 
     [TestClass]
     public class UnitTest1:UnitTestBase
@@ -129,7 +153,7 @@ namespace unittests
         public void SingleObjectRO() {
 
             var isisObj = LoadIsisObject();
-            Assert.AreEqual(5, isisObj.Links.Length);
+            Assert.AreEqual(5, isisObj.ro.links.Length);
         }
 
      
@@ -143,9 +167,9 @@ namespace unittests
         }
 
 
-        private ObjectAction ListAllContacts() {
+        private ObjectActionInstance ListAllContacts() {
             var menu = ContactMenu();
-            Task<ObjectAction> p = api.Load<ObjectAction>(
+            Task<ObjectActionInstance> p = api.Load<ObjectActionInstance>(
                 menu.members["listAll"].details);
             p.Wait();
             return p.Result; 

@@ -1,0 +1,26 @@
+{
+  "id": "company",
+  "memberType": "property",
+  "links": [{
+    "rel": "self",
+    "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14/properties/company",
+    "method": "GET",
+    "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-property\""
+  }, {
+    "rel": "up",
+    "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14",
+    "method": "GET",
+    "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object\"",
+    "title": "Benoît Fouré"
+  }, {
+    "rel": "describedby",
+    "href": "http://localhost:8080/restful/domain-types/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/properties/company",
+    "method": "GET",
+    "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/property-description\""
+  }],
+  "value": "Cumba",
+  "extensions": {
+    "x-isis-format": "string"
+  },
+  "disabledReason": "Immutable"
+}

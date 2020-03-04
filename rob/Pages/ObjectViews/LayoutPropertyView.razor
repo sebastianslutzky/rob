@@ -1,9 +1,10 @@
-﻿   @switch (_format)
+﻿@using rob.Pages.ObjectViews.Property;
+
+@switch (_format)
    {
      case "string":
      case "long":
-       //return StringFieldComponent;
-       <p>stringfieldview</p>
+        <StringPropertyView Property="@Property" Name="@_friendlyName"/>
        break;
      case "javasqltimestamp":
        <p>timestampfieldview</p>

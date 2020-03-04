@@ -20,7 +20,7 @@ public class ActionInvocationService{
        this.logger = logger; 
     }
 
-    public async Task<IsisObject> InvokeAction(ObjectAction action,string title){
+    public async Task<IsisObject> InvokeAction(ObjectActionInstance action,string title){
        
        return await isisApi.Load(action.invoke,title).ContinueWith(x=> {
            x.Wait();

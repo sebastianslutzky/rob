@@ -14,7 +14,11 @@ namespace rob.Pages.ObjectViews{
     public partial class LayoutPropertyView
     {
         private string _format;
-
+        private ObjectMemberInstance _propertyDetails;
+        private ActionDescription _propertyDescriptor;
+        private string _friendlyName;
+        [Inject]
+        private Api Api { get; set; }
         [Inject]
         protected ILogger<LayoutPropertyView> Logger{get;set;}
         [Parameter]
@@ -23,7 +27,10 @@ namespace rob.Pages.ObjectViews{
         protected override async Task OnInitializedAsync()
         {
             _format = Property.extensions.format;
+            _propertyDetails = await Api.Load<ObjectMemberInstance>(Property.details);
+            _propertyDescriptor = await Api.Load<ActionDescription>(_propertyDetails.DescribedBy);
+            _friendlyName = _propertyDescriptor.extensions.friendlyName;
+            Logger.LogInformation(_propertyDetails);
         }
-      
     }
 }

@@ -20,13 +20,13 @@ namespace rob.Pages.NavBar {
     public Member Context{get;set;}
     private string friendlyName;
     private ActionDescription descriptor;
-    private ObjectAction action;
+    private ObjectActionInstance action;
 
 
     protected override async Task OnInitializedAsync()
     {
        // logger.LogInformation(Context);
-        action = await this.Api.Load<ObjectAction>(Context.details);
+        action = await this.Api.Load<ObjectActionInstance>(Context.details);
 
         descriptor = await this.Api.Load<ActionDescription>(action.DescribedBy); 
         friendlyName = descriptor.extensions.friendlyName;

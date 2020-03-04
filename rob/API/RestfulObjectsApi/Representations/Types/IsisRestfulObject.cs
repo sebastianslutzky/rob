@@ -13,11 +13,16 @@ namespace RestfulObjectApi.Representation.Types
     {
         public string title { get; set; }
     }
-    public class ObjectAction : AbstractObjectResourceList<Link, IsisExtension>
+
+    public class ObjectActionInstance : ObjectMemberInstance
     {
-        public string title { get; set; }
         public ILink invoke => FindByRel("urn:org.restfulobjects:rels/invoke");
     }
+    public class ObjectMemberInstance : AbstractObjectResourceList<Link, IsisExtension>
+    {
+        public string title { get; set; }
+    }
+    
 }
 
 
