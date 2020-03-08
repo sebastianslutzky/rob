@@ -3,7 +3,6 @@
 
 <div class="tabGroups tabbable">
     <ul class="nav nav-tabs">
-        
         @if (Layout?.tab != null)
         {
             for (int i=0; i < Layout.tab.Length;i++)
@@ -17,19 +16,16 @@
                 </li>
             }
         }
-        <!--  <li *ngFor='let tab of Layout.tab;let i = index' class="tab{{i}} {{activeClassIfApplies(i)}} link">
-            <a (click)="select(i)">
-                <span>{{tab.name}}</span></a></li> -->
     </ul>
     
     @if (SelectedTab != null)
     {
         <div class="tab-content">
             <div class="tabPanel">
-                @foreach (var row in SelectedTab.row)
-                {
-                    <LayoutRowView Layout="row" Context="Context" />
-                }
+            @foreach (var row in SelectedTab.row)
+            {
+                <LayoutRowView Layout="row" Context="Context"/>
+            }
             </div>
         </div> 
     }

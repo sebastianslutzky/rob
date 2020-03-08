@@ -1,4 +1,6 @@
+@using Microsoft.Extensions.Logging
 @using rob.layout.representations
+@using Blazor.Extensions.Logging
 @inherits LayoutBase<LayoutFieldSet>
 
 <!-- Display  -->
@@ -11,9 +13,9 @@
                 <div class="pull-right" id="associatedActionLinksPanel176">
                    <ul class="additionalLinkList additionalLinkListInline list-unstyled list-inline" id="additionalLinkList177">
                    @foreach (var action in _contextActions)
-                      {
+                   {
                           <LayoutActionView Action="action"/> 
-                      }
+                   }
                    </ul>
                 </div>
              </div>

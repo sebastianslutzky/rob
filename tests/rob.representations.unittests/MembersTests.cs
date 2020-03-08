@@ -26,5 +26,5 @@ namespace unittests.representations
             var raw = System.IO.File.ReadAllText("data/property.json");
             var layout = System.Text.Json.JsonSerializer.Deserialize<ObjectMemberInstance>(raw);
         }
-    }
+    } 
 }

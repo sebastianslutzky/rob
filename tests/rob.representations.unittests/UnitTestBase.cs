@@ -13,6 +13,8 @@ namespace unittests
             get { return testContextInstance; }
             set { testContextInstance = value; }
         }
+        
+        
 
         protected IsisSingleObject LoadIsisObject()
         {

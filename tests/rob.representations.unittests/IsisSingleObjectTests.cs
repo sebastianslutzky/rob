@@ -4,6 +4,7 @@ using rob.API.ApacheISISApi;
 
 namespace unittests.representations
 {
+    
     [TestClass]
     public class IsisSingleObjectTests : UnitTestBase
     {
@@ -19,8 +20,5 @@ namespace unittests.representations
             var iso = LoadIsisSingleObject();
             Assert.IsNotNull(iso.ro);
         }
-     
-  
-   
-    }
+     }
 }
