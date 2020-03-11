@@ -1,5 +1,5 @@
-@using rob.layout.representations
-@inherits LayoutBase<rob.layout.representations.LayoutTabGroup>
+@using rob.Layout
+@inherits LayoutBase<rob.Layout.LayoutTabGroup>
 
 <div class="tabGroups tabbable">
     <ul class="nav nav-tabs">
@@ -24,7 +24,7 @@
             <div class="tabPanel">
             @foreach (var row in SelectedTab.row)
             {
-                <LayoutRowView Layout="row" Context="Context"/>
+                <LayoutRowView Layout="row" Context="Context" Unreferenced="Unreferenced"/>
             }
             </div>
         </div> 

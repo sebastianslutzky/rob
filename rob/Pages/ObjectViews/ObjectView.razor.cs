@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Logging;
 using rob.API.ApacheISISApi;
-using rob.layout.representations;
+using rob.Layout;
 
 namespace rob.Pages.ObjectViews
 {
@@ -10,6 +10,9 @@ namespace rob.Pages.ObjectViews
     {
         [Inject]
         protected ILogger<ObjectView> Logger { get; set; }
+        
+        
+        
 
    
 

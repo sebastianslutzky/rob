@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 using Blazor.Extensions.Logging;
 using rob.Services;
 using rob.API.ApacheISISApi;
-using rob.layout.representations;
+using rob.Layout;
 
 namespace rob.Pages{
 
@@ -48,6 +48,8 @@ namespace rob.Pages{
                 LoadSingleObject(Resource);
             }
         }
+        
+        private UnrefencedMembersFilter Unreferenced => new UnrefencedMembersFilter(this.FocusObjectAsIsisSingleObject,this.ObjectLayout);
 
    
         protected override async Task OnInitializedAsync()

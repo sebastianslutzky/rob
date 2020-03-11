@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RestfulObjectApi.Representation.Types;
 using rob.API.ApacheISISApi;
-using rob.layout.representations;
+using rob.Layout;
 using rob.Shared;
 
 namespace rob

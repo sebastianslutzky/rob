@@ -1,9 +1,9 @@
-@inherits LayoutBase<rob.layout.representations.LayoutColumn>
+@inherits LayoutBase<rob.Layout.LayoutColumn>
 @if (Layout?.tabGroup != null)
 {
     foreach (var tabGroup in Layout.tabGroup)
     {
-      <LayoutTabGroupView Layout="tabGroup"  Context="Context" />
+      <LayoutTabGroupView Layout="tabGroup"  Context="Context"  Unreferenced="Unreferenced"/>
     }  
 }
 
@@ -14,6 +14,7 @@
         <LayoutPropertyGroupView
             Context="Context"    
             Layout="fieldSet"
+            Unreferenced="Unreferenced"
             /> 
     }
 }

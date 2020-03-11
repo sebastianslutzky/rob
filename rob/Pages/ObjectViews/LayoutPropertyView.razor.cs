@@ -6,7 +6,6 @@ using Microsoft.Extensions.Logging;
 using Blazor.Extensions.Logging;
 using System.Threading.Tasks;
 using RestfulObjectApi.Representation.Types;
-using rob.layout.representations;
 
 namespace rob.Pages.ObjectViews{
 

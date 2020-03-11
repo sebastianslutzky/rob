@@ -4,7 +4,7 @@ using rob.API.ApacheISISApi;
 using Microsoft.Extensions.Logging;
 using Blazor.Extensions.Logging;
 using System.Threading.Tasks;
-using rob.layout.representations;
+using rob.Layout;
 
 namespace rob.Pages.ObjectViews{
 

@@ -1,6 +1,6 @@
-﻿@inherits LayoutBase<rob.layout.representations.LayoutRow>
+﻿@inherits LayoutBase<rob.Layout.LayoutRow>
 
 @foreach (var cols in _columns)
 {
-    <LayoutColumnView Context="Context" Layout="cols.col"/>
+    <LayoutColumnView Context="Context" Layout="cols.col" Unreferenced="Unreferenced"/>
 }

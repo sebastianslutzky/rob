@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-public class Member : Resource<Link>
+public class Member : Resource<Link>,IMemberIdentity
 {
     public string id { get; set; }
     public string memberType { get; set; }

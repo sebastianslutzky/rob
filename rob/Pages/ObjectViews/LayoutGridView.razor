@@ -1,10 +1,10 @@
 ﻿@using rob.Pages.ObjectViews;
 
-@inherits LayoutBase<rob.layout.representations.ObjectLayout>
+@inherits LayoutBase<rob.Layout.ObjectLayout>
 
 @foreach (var row in Rows)
 {
-    <LayoutRowView Context="Context" Layout="row" />
+    <LayoutRowView Context="Context" Layout="row" Unreferenced="Unreferenced"/>
 }
 
 

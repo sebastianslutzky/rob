@@ -10,7 +10,9 @@ namespace rob.Pages.ObjectViews
         [Parameter]
         public IsisSingleObject Context { get; set; }
         
-       
+        [Parameter]
+        public UnrefencedMembersFilter Unreferenced { get; set; }
+
         private TLayout _layout;
         [Parameter]
         public TLayout Layout

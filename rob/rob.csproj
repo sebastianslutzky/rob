@@ -33,4 +33,22 @@
   <ItemGroup>
     <ProjectReference Include="..\rob.layout.representations\rob.layout.representations.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\Counter.razor" />
+    <_ContentIncludedByDefault Remove="Pages\FetchData.razor" />
+    <_ContentIncludedByDefault Remove="Pages\Index.razor" />
+    <_ContentIncludedByDefault Remove="Pages\ListView\IsisList.razor" />
+    <_ContentIncludedByDefault Remove="Pages\NavBar\Banner.razor" />
+    <_ContentIncludedByDefault Remove="Pages\NavBar\MenuAction.razor" />
+    <_ContentIncludedByDefault Remove="Pages\NavBar\MenuBar.razor" />
+    <_ContentIncludedByDefault Remove="Pages\ObjectViews\LayoutActionView.razor" />
+    <_ContentIncludedByDefault Remove="Pages\ObjectViews\LayoutColumnView.razor" />
+    <_ContentIncludedByDefault Remove="Pages\ObjectViews\LayoutGridView.razor" />
+    <_ContentIncludedByDefault Remove="Pages\ObjectViews\LayoutPropertyGroupView.razor" />
+    <_ContentIncludedByDefault Remove="Pages\ObjectViews\LayoutPropertyView.razor" />
+    <_ContentIncludedByDefault Remove="Pages\ObjectViews\LayoutRowView.razor" />
+    <_ContentIncludedByDefault Remove="Pages\ObjectViews\LayoutTabGroupView.razor" />
+    <_ContentIncludedByDefault Remove="Pages\ObjectViews\ObjectView.razor" />
+    <_ContentIncludedByDefault Remove="Pages\ObjectViews\Property\StringPropertyView.razor" />
+  </ItemGroup>
 </Project>
