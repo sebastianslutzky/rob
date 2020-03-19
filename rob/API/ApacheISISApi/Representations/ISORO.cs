@@ -18,6 +18,12 @@ namespace rob.API.ApacheISISApi.Representations
             get { return members.Values.Where(m => m.memberType == "property"); }
         }
         
+        public IEnumerable<Member> collection
+        {
+            get { return members.Values.Where(m => m.memberType == "collection"); }
+        }
+
+        
         public ILink Layout => FindByRel(isisRel("object-layout"));
     }
 }

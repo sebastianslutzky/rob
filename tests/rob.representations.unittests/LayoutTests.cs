@@ -23,7 +23,13 @@ namespace unittests.representations
             var iso = new IsisSingleObject(token);
             return iso;
         }
-        
+
+        protected  ObjectLayout GetLayout()
+        {
+            var raw = System.IO.File.ReadAllText("data/layout.json");
+            var layout = System.Text.Json.JsonSerializer.Deserialize<ObjectLayout>(raw);
+            return layout;
+        }
     }
 
     [TestClass]
@@ -33,13 +39,12 @@ namespace unittests.representations
         [TestMethod]
         public void ObjectLayout_Rows()
         {
-            var raw = System.IO.File.ReadAllText("data/layout.json");
-            var layout = System.Text.Json.JsonSerializer.Deserialize<ObjectLayout>(raw);
+            var layout = GetLayout();
             Assert.IsNotNull(layout.row);
             Assert.AreEqual(2, layout.row.Length);
         }
-        
-        
+
+
         [TestMethod]
         public void RowLayout_Columns()
         {
@@ -86,6 +91,18 @@ namespace unittests.representations
          }
          
          [TestMethod]
+         public void ColumnLayout_collection()
+         {
+             var raw = System.IO.File.ReadAllText("data/layout.json");
+             var layout = System.Text.Json.JsonSerializer.Deserialize<ObjectLayout>(raw);
+             var coll = layout.row[1].cols[1].col.tabGroup[0].tab[0].row[0].cols[0].col.collection;
+             Assert.IsNotNull(coll);
+             Assert.AreEqual(2, coll.Length);
+             Assert.AreEqual("contactNumbers",coll[0].id);
+         }
+
+         
+         [TestMethod]
          public void FieldSet_Property()
          {
              var raw = System.IO.File.ReadAllText("data/layout.json");
@@ -124,5 +141,6 @@ namespace unittests.representations
              Assert.IsNotNull(row);
              Assert.AreEqual(1, row.Length);
          }
+         
     }
 }

@@ -1,0 +1,66 @@
+[{
+  "$$href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.number.dom.ContactNumber/21",
+  "$$title": "+33 3 22 99 11 77 (Office)",
+  "$$instanceId": "21",
+  "type": "Office",
+  "number": "+33 3 22 99 11 77",
+  "owner": {
+    "rel": "urn:org.restfulobjects:rels/value",
+    "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14",
+    "method": "GET",
+    "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object\"",
+    "title": "Benoît Fouré"
+  }
+}, {
+  "$$href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.number.dom.ContactNumber/22",
+  "$$title": "+33 6 90 90 90 90 (Mobile)",
+  "$$instanceId": "22",
+  "type": "Mobile",
+  "number": "+33 6 90 90 90 90",
+  "owner": {
+    "rel": "urn:org.restfulobjects:rels/value",
+    "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14",
+    "method": "GET",
+    "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object\"",
+    "title": "Benoît Fouré"
+  }
+}, {
+  "$$ro": {
+    "id": "contactNumbers",
+    "memberType": "collection",
+    "links": [{
+      "rel": "self",
+      "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14/collections/contactNumbers",
+      "method": "GET",
+      "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object-collection\""
+    }, {
+      "rel": "up",
+      "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/14",
+      "method": "GET",
+      "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object\"",
+      "title": "Benoît Fouré"
+    }, {
+      "rel": "describedby",
+      "href": "http://localhost:8080/restful/domain-types/org.incode.eurocommercial.contactapp.module.contacts.dom.Contact/collections/contactNumbers",
+      "method": "GET",
+      "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/collection-description\""
+    }],
+    "extensions": {
+      "collectionSemantics": "set"
+    },
+    "value": [{
+      "rel": "urn:org.restfulobjects:rels/value",
+      "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.number.dom.ContactNumber/21",
+      "method": "GET",
+      "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object\"",
+      "title": "+33 3 22 99 11 77 (Office)"
+    }, {
+      "rel": "urn:org.restfulobjects:rels/value",
+      "href": "http://localhost:8080/restful/objects/org.incode.eurocommercial.contactapp.module.number.dom.ContactNumber/22",
+      "method": "GET",
+      "type": "application/json;profile=\"urn:org.restfulobjects:repr-types/object\"",
+      "title": "+33 6 90 90 90 90 (Mobile)"
+    }],
+    "disabledReason": "Immutable"
+  }
+}]

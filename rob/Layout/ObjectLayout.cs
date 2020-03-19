@@ -3,19 +3,6 @@
 namespace rob.Layout
 {
     //public class LayoutVisitorIterator:IEn
-    public interface ILayoutVisitor
-    {
-        void Visit(ObjectLayout action);
-        void Visit(LayoutAction action);
-        void Visit(LayoutProperty prop);
-        void Visit(LayoutRow row);
-        void Visit(LayoutColumn column);
-        void Visit(LayoutCollection column);
-        void Visit(LayoutColumnCollection column);
-        void Visit(LayoutTabGroup tabGroup);
-        void Visit(LayoutFieldSet fieldSet);
-        void Visit(LayoutTab tab);
-    }
 
     public interface ILayoutElement
     {
@@ -67,6 +54,7 @@ namespace rob.Layout
 
     public class LayoutCollection:ILayoutElement
     {
+        public string id { get; set; }
         public LayoutAction[] action { get; set; }
         public void Accept(ILayoutVisitor visitor)
         {

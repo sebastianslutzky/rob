@@ -19,20 +19,12 @@
     }
 }
 
-
-<!--
-<app-property-group *ngFor="let fieldSet of FieldSets"
-                    [Name]="fieldSet.name" 
-                    [Context]="ObjectContext" 
-                    [LayoutContext]="fieldSet">
-</app-property-group>   
-
-<div class='object-collections' >
-    <span *ngFor='let collectionMember of collections'>
-        <app-collection-button 
-            [LayoutContext]='collectionMember' 
-            [ObjectContext]='ObjectContext'>
-        </app-collection-button>
-    </span>     
+<div class='object-collections'>
+    @if (Layout?.collection != null)
+    {
+        foreach (var coll in Layout?.collection)
+        {
+            <LayoutCollectionView Context="Context" Layout="coll" />
+        }
+    }
 </div> 
--->

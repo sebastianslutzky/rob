@@ -1,9 +1,11 @@
+using System.Runtime.CompilerServices;
 using Microsoft.AspNetCore.Components.Builder;
 using Blazor.Extensions.Logging;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 using rob.Services;
 
+[assembly: InternalsVisibleTo("rob.representations.unittests")]
 namespace rob
 {
     public class Startup
