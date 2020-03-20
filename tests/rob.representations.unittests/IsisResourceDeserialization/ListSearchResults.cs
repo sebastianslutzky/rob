@@ -8,7 +8,7 @@ using rob.API.ApacheISISApi.Resources;
 namespace rob.representations.unittests.IsisResourceDeserialization
 {
     [TestClass]
-    public class IsisResourceSerializationTests_ListSearchResults
+    public class ListSearchResults
     {
         private SimpleIsisCollection _converted;
 
@@ -119,4 +119,6 @@ namespace rob.representations.unittests.IsisResourceDeserialization
             Assert.AreEqual("Sebastian Slutzky", link.title);
         }
     }
+    
+    
 }

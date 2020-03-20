@@ -7,12 +7,10 @@ using Newtonsoft.Json.Linq;
 
 namespace rob.API.ApacheISISApi.Resources
 {
-    /*
-      - 1: LIst result:
-             - deserialize all items but last as SimpleIsisItem
-             - deserialize ro:
-                
-     */
+
+    /// <summary>
+    /// ISIS Representation of a collection
+    /// </summary>
     public class SimpleIsisCollection:IDisplayableObject
     {
         public IList<SimpleIsisItem> Items { get; set; }
@@ -31,12 +29,17 @@ namespace rob.API.ApacheISISApi.Resources
         }
     }
 
+    /// <summary>
+    /// Isis representation of an object
+    /// </summary>
     public class SimpleIsisObject:SimpleIsisItem
     {
         public IsisRo ro { get; set; }
-
-        
     }
+    
+    /// <summary>
+    /// Isis representation of a list or collection item
+    /// </summary>
 
     public class SimpleIsisItem
     {
@@ -53,6 +56,9 @@ namespace rob.API.ApacheISISApi.Resources
         public JToken this[string key] => UnmatchedProperties[key];
     }
     
+    /// <summary>
+    /// Details of an object/collection or action result
+    /// </summary>
     public class IsisRo{
         // generalise to LinkSet
         public IList<Link> links { get; set; } 
@@ -76,7 +82,7 @@ namespace rob.API.ApacheISISApi.Resources
         // collection
         public string id { get; set; }
         public string memberType { get; set; }
-        public IEnumerable<RoResult>  value { get; set; }
+        public IEnumerable<ExtendedLink>  value { get; set; }
         
         // Resource
         public ILink Layout => FindByRel(isisRel("object-layout"));
@@ -89,6 +95,10 @@ namespace rob.API.ApacheISISApi.Resources
             return $"urn:org.apache.isis.restfulobjects:rels/{rel}";
         }
     }
+    
+    /// <summary>
+    /// The result of an action
+    /// </summary>
 
     public class RoResult
     {
