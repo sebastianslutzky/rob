@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RestfulObjectApi.Representation.Types;
 
-namespace unittests.representations
+namespace rob.representations.tests.unitTests
 {
     [TestClass]
     public class MembersTests : UnitTestBase
@@ -13,7 +13,7 @@ namespace unittests.representations
             var ro = iso.ro.members;
             
             Assert.IsNotNull(ro["company"]);
-            Assert.AreEqual("Cumba",ro["company"].value);
+            Assert.AreEqual<string>("Cumba",ro["company"].value);
         }
     }
     

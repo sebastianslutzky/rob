@@ -1,11 +1,9 @@
-using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json.Linq;
-using rob;
 using rob.API.ApacheISISApi;
 using rob.Layout;
 
-namespace unittests.representations
+namespace rob.representations.tests.unitTests
 {
     public class UnitTestBase
     {
@@ -15,7 +13,7 @@ namespace unittests.representations
             get { return testContextInstance; }
             set { testContextInstance = value; }
         }
-        
+
         protected IsisSingleObject LoadIsisSingleObject()
         {
             var raw = System.IO.File.ReadAllText("data/contact.json");
@@ -41,7 +39,7 @@ namespace unittests.representations
         {
             var layout = GetLayout();
             Assert.IsNotNull(layout.row);
-            Assert.AreEqual(2, layout.row.Length);
+            Assert.AreEqual<int>(2, layout.row.Length);
         }
 
 

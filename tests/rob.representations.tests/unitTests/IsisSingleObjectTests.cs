@@ -1,8 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Newtonsoft.Json.Linq;
-using rob.API.ApacheISISApi;
 
-namespace unittests.representations
+namespace rob.representations.tests.unitTests
 {
     
     [TestClass]

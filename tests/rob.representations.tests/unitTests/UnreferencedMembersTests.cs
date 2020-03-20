@@ -1,20 +1,11 @@
-using System;
-using System.ComponentModel;
 using System.Linq;
-using System.Net.Http;
-using Castle.Core.Logging;
 using Microsoft.AspNetCore.Components;
-using Microsoft.Extensions.Logging;
-using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
-using Moq.Protected;
-using rob;
 using rob.API.ApacheISISApi;
 using rob.Layout;
 using rob.Pages.ObjectViews;
 
-namespace unittests
+namespace rob.representations.tests.unitTests
 {
     [TestClass]
     public class CollectionViewTests : UnitTestBase
@@ -45,7 +36,7 @@ namespace unittests
         [TestInitialize]
         public void Setup()
         {
-            _iso = LoadIsisObject();
+            _iso = LoadIsisSingleObject();
             var raw = System.IO.File.ReadAllText("data/layout.json");
             _layout = System.Text.Json.JsonSerializer.Deserialize<ObjectLayout>(raw);
             _contactDetails = _layout.row[1].cols[0].col.tabGroup[0].tab[0].row[0].cols[0].col.fieldSet[0];
@@ -64,7 +55,7 @@ namespace unittests
         [TestInitialize]
         public void Setup()
         {
-            _iso = LoadIsisObject();
+            _iso = LoadIsisSingleObject();
             var raw = System.IO.File.ReadAllText("data/layout.json");
             _layout = System.Text.Json.JsonSerializer.Deserialize<ObjectLayout>(raw);
             _contactDetails = _layout.row[1].cols[0].col.tabGroup[0].tab[0].row[0].cols[0].col.fieldSet[0];

@@ -1,12 +1,9 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using rob;
 using rob.API.ApacheISISApi;
 using rob.Layout;
 
-namespace unittests
+namespace rob.representations.tests.unitTests
 {
     [TestClass]
     public class FieldSetLayoutFilterTests:UnitTestBase
@@ -16,7 +13,7 @@ namespace unittests
         [TestInitialize]
         public void Setup()
         {
-            _iso = LoadIsisObject();
+            _iso = LoadIsisSingleObject();
             var raw = System.IO.File.ReadAllText("data/layout.json");
             System.Text.Json.JsonSerializer.Deserialize<ObjectLayout>(raw);
         }
@@ -24,7 +21,7 @@ namespace unittests
         [TestMethod]
         public void Properties()
         {
-            var iso = LoadIsisObject();
+            var iso = LoadIsisSingleObject();
             var raw = System.IO.File.ReadAllText("data/layout.json");
             var layout = System.Text.Json.JsonSerializer.Deserialize<ObjectLayout>(raw);
             
@@ -33,7 +30,7 @@ namespace unittests
             var sut = new FieldSetLayoutFilter(iso, fieldSet);
             
             Assert.AreEqual(3,fieldSet.property.Length);
-            Assert.AreEqual(6,iso.ro.Properties.Count());
+            Assert.AreEqual(6,Enumerable.Count<Member>(iso.ro.Properties));
             Assert.AreEqual(3,sut.Properties.Count());
             
         }
@@ -41,7 +38,7 @@ namespace unittests
         [TestMethod]
         public void Actions()
         {
-            var iso = LoadIsisObject();
+            var iso = LoadIsisSingleObject();
             var raw = System.IO.File.ReadAllText("data/layout.json");
             var layout = System.Text.Json.JsonSerializer.Deserialize<ObjectLayout>(raw);
             
@@ -50,13 +47,13 @@ namespace unittests
             var sut = new FieldSetLayoutFilter(iso, fieldSet);
             
             Assert.AreEqual(3,fieldSet.action.Length);
-            Assert.AreEqual(8,iso.ro.Actions.Count());
+            Assert.AreEqual(8,Enumerable.Count<Member>(iso.ro.Actions));
             Assert.AreEqual(3,sut.Actions.Count());
         }
         [TestMethod]
         public void DealWithNoLayouActions()
         {
-            var iso = LoadIsisObject();
+            var iso = LoadIsisSingleObject();
             var raw = System.IO.File.ReadAllText("data/layout.json");
             var layout = System.Text.Json.JsonSerializer.Deserialize<ObjectLayout>(raw);
             

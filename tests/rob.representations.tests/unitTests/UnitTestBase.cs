@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json.Linq;
 using rob.API.ApacheISISApi;
 
-namespace unittests
+namespace rob.representations.tests.unitTests
 {
     public class UnitTestBase
     {

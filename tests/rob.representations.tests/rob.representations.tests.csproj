@@ -4,6 +4,18 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
 
         <IsPackable>false</IsPackable>
+
+        <AssemblyName>rob.representations.tests</AssemblyName>
+
+        <RootNamespace>rob.representations.tests</RootNamespace>
+
+        <PackageId>rob.representations.tests</PackageId>
+
+        <Authors>rob.representations.tests</Authors>
+
+        <Company>rob.representations.tests</Company>
+
+        <Product>rob.representations.tests</Product>
     </PropertyGroup>
 
     <ItemGroup>
@@ -24,6 +36,11 @@
     <ItemGroup>
       <ProjectReference Include="..\..\rob.layout.representations\rob.layout.representations.csproj" />
       <ProjectReference Include="..\..\rob\rob.csproj" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <Compile Remove="unitTests\UnitTestBase.cs" />
     </ItemGroup>
 
 </Project>

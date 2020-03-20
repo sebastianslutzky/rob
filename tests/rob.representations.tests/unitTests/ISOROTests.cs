@@ -1,10 +1,10 @@
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using rob;
 using rob.API.ApacheISISApi;
 using rob.Layout;
 
-namespace unittests.representations
+namespace rob.representations.tests.unitTests
 {
 
 
@@ -59,7 +59,7 @@ namespace unittests.representations
         public void ro_member()
         {
             var iso = LoadIsisSingleObject();
-            Assert.AreEqual("company",iso.ro.members.ElementAt(0).Value.id);
+            Assert.AreEqual("company",Enumerable.ElementAt<KeyValuePair<string, Member>>(iso.ro.members, 0).Value.id);
         }
         
         [TestMethod]
@@ -68,7 +68,7 @@ namespace unittests.representations
             var iso = LoadIsisSingleObject();
             var actions = iso.ro.Actions;
             
-            Assert.AreEqual(8,actions.Count());
+            Assert.AreEqual(8,Enumerable.Count<Member>(actions));
         }
         [TestMethod]
         public void ro_properties()
@@ -76,7 +76,7 @@ namespace unittests.representations
             var iso = LoadIsisSingleObject();
             var props = iso.ro.Properties;
             
-            Assert.AreEqual(6,props.Count());
+            Assert.AreEqual(6,Enumerable.Count<Member>(props));
         }
         
         [TestMethod]
@@ -84,21 +84,21 @@ namespace unittests.representations
         {
             var iso = LoadIsisSingleObject();
             Assert.IsNotNull(iso.ro.members);
-            Assert.AreEqual(16,iso.ro.members.Count);
+            Assert.AreEqual<int>(16,iso.ro.members.Count);
         }
         [TestMethod]
         public void ro_links()
         {
             var iso = LoadIsisSingleObject();
             Assert.IsNotNull(iso.ro.links);
-            Assert.AreEqual(5,iso.ro.links.Length);
+            Assert.AreEqual<int>(5,iso.ro.links.Length);
         }
         [TestMethod]
         public void ro_collection()
         {
             var iso = LoadIsisSingleObject();
             Assert.IsNotNull(iso.ro.collection);
-            Assert.AreEqual(2,iso.ro.collection.Count());
+            Assert.AreEqual(2,Enumerable.Count<Member>(iso.ro.collection));
         }
     }
 }

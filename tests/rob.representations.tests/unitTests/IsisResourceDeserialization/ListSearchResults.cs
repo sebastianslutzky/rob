@@ -1,11 +1,10 @@
 using System.IO;
-using System.Net;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using rob.API.ApacheISISApi;
 using rob.API.ApacheISISApi.Resources;
 
-namespace rob.representations.unittests.IsisResourceDeserialization
+namespace rob.representations.tests.unitTests.IsisResourceDeserialization
 {
     [TestClass]
     public class ListSearchResults

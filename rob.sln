@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "unittests", "tests\unittest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rob.layout.representations", "rob.layout.representations\rob.layout.representations.csproj", "{94838FFC-E914-40D0-ADCF-5CB6DC9E6630}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rob.representations.unittests", "tests\rob.representations.unittests\rob.representations.unittests.csproj", "{5EE7B0FD-A4C8-44E9-BC36-8999FDF665E4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rob.representations.tests", "tests\rob.representations.tests\rob.representations.tests.csproj", "{5EE7B0FD-A4C8-44E9-BC36-8999FDF665E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
